@@ -12,14 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#dadada"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:divider="@drawable/empty_tall_divider">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
             android:orientation="horizontal"
-            android:weightSum="28">
+            android:weightSum="28"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
 
             <com.github.naz013.colorslider.ColorSlider
                 android:background="#dadada"
@@ -149,7 +153,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
 
             <View
                 android:id="@+id/view29"
@@ -352,7 +358,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
 
             <View
                 android:id="@+id/view57"
@@ -556,7 +564,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
 
             <View
                 android:id="@+id/view85"
@@ -753,13 +763,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />"
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
 
             <View
                 android:id="@+id/view113"
