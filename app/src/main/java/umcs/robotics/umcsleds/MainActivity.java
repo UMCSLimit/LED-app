@@ -2,6 +2,7 @@ package umcs.robotics.umcsleds;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -15,6 +16,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.annotation.ColorInt;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -26,7 +28,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    public View awesomeViewsArr[] = new View[140];
     private static Context context;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -81,14 +82,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Add listiners to views
         for(int i = 0; i <= Variables.numberOfWindows; i++){
-            awesomeViewsArr[i] = findViewById(viewIdArr[i]);
-            awesomeViewsArr[i].setOnClickListener(new MyOnClickListiner(awesomeViewsArr[i]));
-            //int color = ((ColorDrawable)awesomeViewsArr[i].getBackground()).getColor();
+            Variables.getInstance().awesomeViewsArr[i] = findViewById(viewIdArr[i]);
+            Variables.getInstance().awesomeViewsArr[i].setOnClickListener(new MyOnClickListiner(Variables.getInstance().awesomeViewsArr[i]));
         }
 
         //Navigation Drawer
         NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_item);
         mNavigationView.setNavigationItemSelectedListener(this);
+
+        //Hide Status Bar
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
     }
 
@@ -109,6 +112,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             openStage();
         }else if(id == R.id.d_remove){
             remove();
+        }else if(id == R.id.d_settings){
+            startActivity(new Intent(this, SettingsActivity.class));
+
+        }else if(id == R.id.d_animations){
+
         }
         return false;
     }
@@ -149,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         builder.setSingleChoiceItems(stages2, -1, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 for (int i = 0; i <= Variables.numberOfWindows; i++) {
-                    awesomeViewsArr[i].setBackgroundColor(StageSaver.getInstance().getStages().get(item).rgbValue[i]);
+                    Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(StageSaver.getInstance().getStages().get(item).rgbValue[i]);
                 }
                 dialog.dismiss();
                 Toast.makeText(MainActivity.this, "Stage " +
@@ -169,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
                 Editable name = input.getText();
-                StageSaver.getInstance().addStage(awesomeViewsArr, name);
+                StageSaver.getInstance().addStage(Variables.getInstance().awesomeViewsArr, name);
                 Toast.makeText(MainActivity.this, "Saved! Stage named " + name, Toast.LENGTH_LONG).show();
             }
         });
@@ -183,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void resetStage() {
         for(int i = 0; i <= Variables.numberOfWindows; i++){
-            awesomeViewsArr[i].setBackgroundColor(Color.BLACK);
+            Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(Color.BLACK);
         }
     }
 

@@ -3,18 +3,9 @@ package umcs.robotics.umcsleds;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.text.Editable;
-import android.util.Log;
 import android.view.View;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -84,37 +75,13 @@ public class StageSaver {
         //readValuesFromJson();
     }
 
-    private void readValuesFromJson() {
-        RequestQueue queue = Volley.newRequestQueue(MainActivity.getAppContext());
-        String url ="http://212.182.27.226:5000/getstage";
 
-        // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        Log.i("Wysylanie", "Wysylanie " + response.substring(0,1167));
 
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.i("Wysylanie", "Wysylanie nie dziala");
-            }
-        });
-
-        // Add the request to the RequestQueue.
-        queue.add(stringRequest);
-    }
-
-    private void sendStageToServer(Stage stage) {
-        JsonArray postData = new JsonArray();
-    }
 
     public ArrayList<Stage> getStages() {
         return stages;
     }
+
     public void removeStage(int id){
         stages.remove(id);
         saveStagesOnDevice();

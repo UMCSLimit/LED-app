@@ -1,9 +1,6 @@
 package umcs.robotics.umcsleds;
 
-import android.graphics.Color;
 import android.support.annotation.ColorInt;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 
 public class MyOnClickListiner implements View.OnClickListener {
@@ -16,17 +13,15 @@ public class MyOnClickListiner implements View.OnClickListener {
         this.view = view;
     }
 
-//    @Override
-//    public boolean onTouch(View v, MotionEvent event) {
-//        this.sliderColor = var.sliderColor;
-//        changeColor();
-//        return false;
-//    }
-
-
     private void changeColor() {
-        //Log.i("Kolor", "Kolor " + sliderColor);
         view.setBackgroundColor(sliderColor);
+        if(Variables.getInstance().isLiveMode){
+            sendActualStageToServer();
+        }
+    }
+
+    private void sendActualStageToServer() {
+        StageSender.getInstance().sendActualStageToServer();
     }
 
     @Override

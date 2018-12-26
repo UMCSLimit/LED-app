@@ -1,13 +1,5 @@
 package umcs.robotics.umcsleds;
 
-import android.graphics.Color;
-import android.text.Editable;
-import android.util.Log;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.Serializable;
 
 public class Stage implements Serializable {
