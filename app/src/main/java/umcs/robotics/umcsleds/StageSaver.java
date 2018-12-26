@@ -1,5 +1,6 @@
 package umcs.robotics.umcsleds;
 
+import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.text.Editable;
 import android.util.Log;
@@ -10,13 +11,22 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class StageSaver {
 
     private static StageSaver stageSaver;
-    private ArrayList<Stage> stages = new ArrayList<Stage>();
+    private ArrayList<Stage> stages;
 
     public static synchronized StageSaver getInstance() {
         if (stageSaver == null)
@@ -25,58 +35,53 @@ public class StageSaver {
     }
 
     public StageSaver() {
-        //readStagesFromDevice();
+        stages = new ArrayList<Stage>();
+        readStagesFromDevice();
     }
 
     public void addStage(View leds[], Editable name) {
-        //readStagesFromDevice();
         Stage tempStage = new Stage();
-        tempStage.setName(name);
+        tempStage.setName(name.toString());
         for (int i = 0; i <= Variables.numberOfWindows; i++) {
             int color = ((ColorDrawable) leds[i].getBackground()).getColor();
             tempStage.setRgbValue(i, color);
         }
         stages.add(tempStage);
-        tempStage.getChanelValues();
         saveStagesOnDevice();
-        sendStageToServer(tempStage);
+        //sendStageToServer(tempStage);
     }
 
     public void saveStagesOnDevice() {
-//        //Stage mStudentObject = stages.get(0);
-//        SharedPreferences appSharedPrefs = PreferenceManager
-//                .getDefaultSharedPreferences(MainActivity.getAppContext());
-//        SharedPreferences.Editor prefsEditor = appSharedPrefs.edit();
-//        Gson gson = new Gson();
-//        Log.i("Zapis", "Zapis dziala2");
-//        String json = gson.toJson(stages);
-//        Log.i("Zapis", "Zapis dziala3");
-//        prefsEditor.putString("MyObject", json);
-//        prefsEditor.commit();
-
-// Instantiate the RequestQueue.
-
+        String filename = "stages.txt";
+        Gson gson = new Gson();
+        String s = gson.toJson(stages);
+        FileOutputStream outputStream;
+        try {
+            outputStream = MainActivity.getAppContext().openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write(s.getBytes());
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void readStagesFromDevice() {
-//        SharedPreferences appSharedPrefs = PreferenceManager
-//                .getDefaultSharedPreferences(MainActivity.getAppContext());
-//        Gson gson = new Gson();
-//        Type type = new TypeToken<ArrayList<Stage>>(){}.getType();
-//        String json = appSharedPrefs.getString("MyObject", "");
-//        stages = gson.fromJson(json, type);
-
-//        String TAG = "MyTag";
-//        StringRequest stringRequest; // Assume this exists.
-//        RequestQueue mRequestQueue;  // Assume this exists.
-//
-//// Set the tag on the request.
-//        stringRequest.setTag(TAG);
-//
-//// Add the request to the RequestQueue.
-//        mRequestQueue.add(stringRequest);
-
-        readValuesFromJson();
+        try {
+            FileInputStream fis = MainActivity.getAppContext().openFileInput("stages.txt");
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader bufferedReader = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String line;
+            while ((line = bufferedReader.readLine()) != null) { sb.append(line); }
+            String json = sb.toString();
+            Gson gson = new Gson();
+            stages = gson.fromJson(json, new TypeToken<ArrayList<Stage>>(){}.getType());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //readValuesFromJson();
     }
 
     private void readValuesFromJson() {
@@ -84,7 +89,6 @@ public class StageSaver {
         String url ="http://212.182.27.226:5000/getstage";
 
         // Request a string response from the provided URL.
-
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -106,12 +110,15 @@ public class StageSaver {
 
     private void sendStageToServer(Stage stage) {
         JsonArray postData = new JsonArray();
-
     }
-
 
     public ArrayList<Stage> getStages() {
         return stages;
     }
+    public void removeStage(int id){
+        stages.remove(id);
+        saveStagesOnDevice();
+    }
+
 }
 

@@ -11,6 +11,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.annotation.ColorInt;
@@ -113,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void remove() {
-        List<Editable> listItems = new ArrayList<Editable>();
+        List<String> listItems = new ArrayList<String>();
         for(Stage value : StageSaver.getInstance().getStages())
             listItems.add(value.name);
         final CharSequence[] stages2 = listItems.toArray(new CharSequence[listItems.size()]);
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(DialogInterface dialog, int item) {
 
                 Toast.makeText(MainActivity.this, "Stage " + StageSaver.getInstance().getStages().get(item).name + " removed!", Toast.LENGTH_LONG).show();
-                StageSaver.getInstance().getStages().remove(item);
+                StageSaver.getInstance().removeStage(item);
                 dialog.dismiss();
             }
         });
@@ -134,9 +135,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     private void openStage() {
-        List<Editable> listItems = new ArrayList<Editable>();
-        for(Stage value : StageSaver.getInstance().getStages())
+        List<String> listItems = new ArrayList<String>();
+        for(Stage value : StageSaver.getInstance().getStages()){
+            Log.i("Stage reader opener", " " + value.name);
             listItems.add(value.name);
+        }
+
 
         final CharSequence[] stages2 = listItems.toArray(new CharSequence[listItems.size()]);
         final AlertDialog levelDialog;
@@ -181,6 +185,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         for(int i = 0; i <= Variables.numberOfWindows; i++){
             awesomeViewsArr[i].setBackgroundColor(Color.BLACK);
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        StageSaver.getInstance().saveStagesOnDevice();
+        super.onDestroy();
     }
 
     public static Context getAppContext() {
