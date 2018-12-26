@@ -31,8 +31,8 @@
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_weight="12"
-                app:cs_hex_colors="@array/hex_colors" />
+                android:layout_weight="12"/>
+                #app:cs_hex_colors="@array/hex_colors" />
 
             <View
                 android:id="@+id/view12"

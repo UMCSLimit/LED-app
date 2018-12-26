@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static Context context;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    public ColorSlider colorSlider;
 
     public int viewIdArr[] = {
             //R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5, R.id.view6, R.id.view7, R.id.view8, R.id.view9, R.id.view10, R.id.view11,
@@ -66,12 +67,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //Context
         MainActivity.context = getApplicationContext();
         StageSaver.getInstance();
 
         //Color slider
-        ColorSlider colorSlider = findViewById(R.id.color_slider);
+        colorSlider = findViewById(R.id.color_slider);
+//        colorSlider.setHexColors( new String[]{"0x808080", "0x0000ff", });
+        colorSlider.setColors(new int[]{
+                Color.parseColor("#000000"), Color.parseColor("#FC0FC0"),
+                Color.parseColor("#F44336"), Color.parseColor("#FF0000"),
+                Color.parseColor("#9C27B0"), Color.parseColor("#673AB7"),
+                Color.parseColor("#3F51B5"), Color.parseColor("#0000FF"),
+                Color.parseColor("#03A9F4"), Color.parseColor("#00BCD4"),
+                Color.parseColor("#00FF00"), Color.parseColor("#4CAF50"),
+                Color.parseColor("#8BC34A"), Color.parseColor("#CDDC39"),
+                Color.parseColor("#FFEB3B"), Color.parseColor("#FFC107"),
+                Color.parseColor("#FF9800"), Color.parseColor("#FF5722"),
+                Color.parseColor("#795548"), Color.parseColor("#9E9E9E"),
+                Color.parseColor("#607D8B"), Color.parseColor("#FFFFFF")});
+
         colorSlider.setListener(mListener);
         updateView(colorSlider.getSelectedColor());
 
@@ -114,7 +130,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             remove();
         }else if(id == R.id.d_settings){
             startActivity(new Intent(this, SettingsActivity.class));
-
         }else if(id == R.id.d_animations){
 
         }

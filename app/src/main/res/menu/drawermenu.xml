@@ -5,20 +5,23 @@
             android:checkableBehavior="single"
             android:visible="true">
                 <item
+                    android:id="@+id/d_single_stage"
+                    android:title="Single Stage" />
+                <item
+                    android:id="@+id/d_animations"
+                    android:title="Animations"/>
+                <item
                     android:id="@+id/d_reset"
                     android:title="Reset" />
                 <item
                     android:id="@+id/d_save"
                     android:title="Save"/>
                 <item
-                    android:id="@+id/d_remove"
-                    android:title="Remove"/>
-                <item
                     android:id="@+id/d_open"
                     android:title="Open"/>
                 <item
-                    android:id="@+id/d_animations"
-                    android:title="Animations"/>
+                    android:id="@+id/d_remove"
+                    android:title="Remove"/>
                 <item
                     android:id="@+id/d_settings"
                     android:title="Settings"/>
