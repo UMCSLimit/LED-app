@@ -20,4 +20,6 @@ public class Variables {
     public boolean isLiveMode = false;
     public View awesomeViewsArr[] = new View[140];
     public boolean wasSettingOpen = false;
+    public boolean isAnimationBarShowed = false;
+    public int valueOfTimeLineBar = 0;
 }

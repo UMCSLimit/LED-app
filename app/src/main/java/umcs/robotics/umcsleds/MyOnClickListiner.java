@@ -14,10 +14,16 @@ public class MyOnClickListiner implements View.OnClickListener {
     }
 
     private void changeColor() {
+
         view.setBackgroundColor(sliderColor);
+
         if(Variables.getInstance().isLiveMode){
             sendActualStageToServer();
         }
+        if(Variables.getInstance().isAnimationBarShowed){
+            AnimationCreator.getInstance().addStageToAnimation(Variables.getInstance().awesomeViewsArr, Variables.getInstance().valueOfTimeLineBar);
+        }
+
     }
 
     private void sendActualStageToServer() {

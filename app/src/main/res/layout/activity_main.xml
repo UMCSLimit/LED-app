@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/liniarLayoutVertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#dadada"
@@ -29,7 +30,7 @@
                 android:background="#dadada"
                 android:id="@+id/color_slider"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="64dp"
                 android:layout_gravity="center"
                 android:layout_weight="12"/>
                 #app:cs_hex_colors="@array/hex_colors" />
@@ -970,6 +971,11 @@
                 android:layout_weight="1"
                 android:background="@android:color/black" />
         </LinearLayout>
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            layout="@layout/animation_bar" />
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
