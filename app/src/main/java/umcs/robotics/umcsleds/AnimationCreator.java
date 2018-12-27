@@ -49,6 +49,15 @@ public class AnimationCreator {
         curretAnimation.getStages().add(id, tempStage);
     }
 
+    public void replaceStageInAnimation(View leds[], int id){
+        Stage tempStage = new Stage();
+        for (int i = 0; i <= Variables.numberOfWindows; i++) {
+            int color = ((ColorDrawable) leds[i].getBackground()).getColor();
+            tempStage.setRgbValue(i, color);
+        }
+        curretAnimation.getStages().set(id, tempStage);
+    }
+
     public void removeStageFromAnimation(int id){
         curretAnimation.getStages().remove(id);
     }

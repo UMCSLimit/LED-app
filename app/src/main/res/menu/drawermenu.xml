@@ -6,19 +6,22 @@
             android:visible="true">
                 <item
                     android:id="@+id/d_single_stage"
-                    android:title="Single Stage" />
+                    android:title="Single stage Mode" />
                 <item
                     android:id="@+id/d_animations"
-                    android:title="Animations"/>
+                    android:title="New animation Mode"/>
                 <item
                     android:id="@+id/d_reset"
-                    android:title="Reset" />
+                    android:title="Reset stage" />
                 <item
                     android:id="@+id/d_save"
-                    android:title="Save"/>
+                    android:title="Save stage"/>
                 <item
-                    android:id="@+id/d_open"
-                    android:title="Open"/>
+                    android:id="@+id/d_open_stage"
+                    android:title="Open stage"/>
+                <item
+                    android:id="@+id/d_open_animation"
+                    android:title="Open animation"/>
                 <item
                     android:id="@+id/d_remove"
                     android:title="Remove"/>

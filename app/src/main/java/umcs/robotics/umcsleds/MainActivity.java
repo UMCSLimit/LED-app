@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.support.annotation.ColorInt;
@@ -106,14 +107,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
-
         if (id == R.id.d_reset) {
             resetStage();
             Toast.makeText(this, "Reset is done!", Toast.LENGTH_LONG).show();
         }else if(id == R.id.d_save) {
             saveStage();
-        }else if(id == R.id.d_open){
-            open();
+        }else if(id == R.id.d_open_stage){
+            openStage();
+        }else if(id == R.id.d_open_animation){
+            openAnimation();
         }else if(id == R.id.d_remove){
             remove();
         }else if(id == R.id.d_settings){
@@ -121,8 +123,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }else if(id == R.id.d_animations){
             showAndHideAnimationBar();
         } else if(id == R.id.d_single_stage){
-            animationOptionsBar.setVisibility(View.GONE);
-            Variables.getInstance().isAnimationBarShowed = false;
+            hideAnimationBar();
         }
         return false;
     }
@@ -130,23 +131,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void showAndHideAnimationBar() {
         if(Variables.getInstance().isAnimationBarShowed){
             //Hide
-            animationOptionsBar.setVisibility(View.GONE);
-            Variables.getInstance().isAnimationBarShowed = false;
+            hideAnimationBar();
         } else {
             //Show
             AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
             alert.setTitle("Name of the animation");
             //alert.setMessage("Name of the stage");
             final EditText input = new EditText(MainActivity.this);
+            input.setText("Animation" + AnimationCreator.getInstance().getAnimations().size() + " ");
             alert.setView(input);
             alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                    Editable name = input.getText();
-                    AnimationCreator.getInstance().createNewAnimation(name.toString());
-                    AnimationCreator.getInstance().addStageToAnimation(Variables.getInstance().awesomeViewsArr, 0);
-                    //Toast.makeText(MainActivity.this, "Saved! Stage named " + name, Toast.LENGTH_LONG).show();
-                    animationOptionsBar.setVisibility(View.VISIBLE);
-                    Variables.getInstance().isAnimationBarShowed = true;
+                    creatingNewAnimation(input.getText().toString());
                 }
             });
             alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -156,6 +152,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             });
             alert.show();
             }
+    }
+
+    private void creatingNewAnimation(String name){
+        timeLine.setProgress(0);
+        timeLine.setMax(0);
+        AnimationCreator.getInstance().createNewAnimation(name);
+        AnimationCreator.getInstance().addStageToAnimation(Variables.getInstance().awesomeViewsArr, 0);
+        //Toast.makeText(MainActivity.this, "Saved! Stage named " + name, Toast.LENGTH_LONG).show();
+        showAnimationBar();
+    }
+
+    private void showAnimationBar(){
+        animationOptionsBar.setVisibility(View.VISIBLE);
+        Variables.getInstance().isAnimationBarShowed = true;
+    }
+
+    private void hideAnimationBar(){
+        AnimationCreator.getInstance().saveAnimationsOnDevice();
+        animationOptionsBar.setVisibility(View.GONE);
+        Variables.getInstance().isAnimationBarShowed = false;
     }
 
     private void remove() {
@@ -210,15 +226,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         levelDialog.show();
     }
 
-    private void open() {
-        if(Variables.getInstance().isAnimationBarShowed){
-            openAnimation();
-        } else {
-            openStage();
-        }
-    }
-
     private void openAnimation() {
+
+        //Dialog
         List<String> listItems = new ArrayList<String>();
         for(Animation value : AnimationCreator.getInstance().getAnimations()){
             Log.i("Stage reader opener", " " + value.getName());
@@ -230,8 +240,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         builder.setTitle("Select a animation to open");
         builder.setSingleChoiceItems(animations2, -1, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
+                showAnimationBar();
+                //Setting animation in animation creator
                 AnimationCreator.getInstance().setCurretAnimation(
                         AnimationCreator.getInstance().getAnimations().get(item));
+                //setup timeline bar
+                timeLine.setMax(AnimationCreator.getInstance().getAnimations().get(item).getStages().size() - 1);
+                timeLine.setProgress(0);
+                //show animation in screen
                 for (int i = 0; i <= Variables.numberOfWindows; i++) {
                     Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(
                             AnimationCreator.getInstance().getAnimations().get(item).getStages().get(timeLine.getProgress()).rgbValue[i]);
@@ -252,7 +268,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             listItems.add(value.name);
         }
 
-
         final CharSequence[] stages2 = listItems.toArray(new CharSequence[listItems.size()]);
         final AlertDialog levelDialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -262,6 +277,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 for (int i = 0; i <= Variables.numberOfWindows; i++) {
                     Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(
                             StageSaver.getInstance().getStages().get(item).rgbValue[i]);
+                }
+                if(Variables.getInstance().isAnimationBarShowed){
+                    AnimationCreator.getInstance().replaceStageInAnimation(
+                            Variables.getInstance().awesomeViewsArr, timeLine.getProgress());
                 }
                 dialog.dismiss();
                 Toast.makeText(MainActivity.this, "Stage " +
@@ -371,7 +390,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        animationOptionsBar.setVisibility(View.GONE);
+        hideAnimationBar();
     }
 
     private void addListinerToViews() {
@@ -395,6 +414,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onDestroy() {
         StageSaver.getInstance().saveStagesOnDevice();
         AnimationCreator.getInstance().saveAnimationsOnDevice();
+
         super.onDestroy();
     }
 

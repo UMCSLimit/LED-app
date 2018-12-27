@@ -21,7 +21,7 @@ public class MyOnClickListiner implements View.OnClickListener {
             sendActualStageToServer();
         }
         if(Variables.getInstance().isAnimationBarShowed){
-            AnimationCreator.getInstance().addStageToAnimation(Variables.getInstance().awesomeViewsArr, Variables.getInstance().valueOfTimeLineBar);
+            AnimationCreator.getInstance().replaceStageInAnimation(Variables.getInstance().awesomeViewsArr, Variables.getInstance().valueOfTimeLineBar);
         }
 
     }
