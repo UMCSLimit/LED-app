@@ -4,19 +4,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Editable;
+import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
-import android.support.annotation.ColorInt;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,9 @@ import com.github.naz013.colorslider.ColorSlider;
 import java.util.ArrayList;
 import java.util.List;
 
+import snake.Snake;
+import snake.services.SnakeController;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -37,9 +41,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle mToggle;
     public ColorSlider colorSlider;
 
-    private View tv1;
     private LinearLayout animationOptionsBar;
     private SeekBar timeLine;
+
+    private Snake snake;
 
 
     public int viewIdArr[] = {
@@ -79,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Context
         MainActivity.context = getApplicationContext();
+
+        //Read saved stages
         StageSaver.getInstance();
 
         //Color slider
@@ -102,34 +109,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
         if (id == R.id.d_reset) {
             resetStage();
             Toast.makeText(this, "Reset is done!", Toast.LENGTH_LONG).show();
-        }else if(id == R.id.d_save) {
+        } else if (id == R.id.d_save) {
             saveStage();
-        }else if(id == R.id.d_open_stage){
+        } else if (id == R.id.d_open_stage) {
             openStage();
-        }else if(id == R.id.d_open_animation){
+        } else if (id == R.id.d_open_animation) {
             openAnimation();
-        }else if(id == R.id.d_remove){
+        } else if (id == R.id.d_remove) {
             remove();
-        }else if(id == R.id.d_settings){
+        } else if (id == R.id.d_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
-        }else if(id == R.id.d_animations){
+        } else if (id == R.id.d_animations) {
             showAndHideAnimationBar();
-        } else if(id == R.id.d_single_stage){
+        } else if (id == R.id.d_single_stage) {
             hideAnimationBar();
+        } else if (id == R.id.d_snake) {
+            startSnake();
         }
         return false;
     }
 
+    private void startSnake() {
+        hideStatusBar();
+        snake = new Snake();
+        Variables.getInstance().isSnake = true;
+    }
+
     private void showAndHideAnimationBar() {
-        if(Variables.getInstance().isAnimationBarShowed){
+        if (Variables.getInstance().isAnimationBarShowed) {
             //Hide
             hideAnimationBar();
         } else {
@@ -151,10 +164,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             });
             alert.show();
-            }
+        }
     }
 
-    private void creatingNewAnimation(String name){
+    private void creatingNewAnimation(String name) {
         timeLine.setProgress(0);
         timeLine.setMax(0);
         AnimationCreator.getInstance().createNewAnimation(name);
@@ -163,19 +176,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         showAnimationBar();
     }
 
-    private void showAnimationBar(){
+    private void showAnimationBar() {
         animationOptionsBar.setVisibility(View.VISIBLE);
         Variables.getInstance().isAnimationBarShowed = true;
     }
 
-    private void hideAnimationBar(){
+    private void hideAnimationBar() {
         AnimationCreator.getInstance().saveAnimationsOnDevice();
         animationOptionsBar.setVisibility(View.GONE);
         Variables.getInstance().isAnimationBarShowed = false;
     }
 
     private void remove() {
-        if(Variables.getInstance().isAnimationBarShowed) {
+        if (Variables.getInstance().isAnimationBarShowed) {
             removeAnimation();
         } else {
             removeStage();
@@ -184,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void removeAnimation() {
         List<String> listItems = new ArrayList<String>();
-        for(Animation value : AnimationCreator.getInstance().getAnimations())
+        for (Animation value : AnimationCreator.getInstance().getAnimations())
             listItems.add(value.getName());
         final CharSequence[] animations2 = listItems.toArray(new CharSequence[listItems.size()]);
         final AlertDialog levelDialog;
@@ -192,7 +205,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         builder.setTitle("Select a animation to remove");
         builder.setSingleChoiceItems(animations2, -1, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
-                if(AnimationCreator.getInstance().getCurretAnimation() == AnimationCreator.getInstance().getAnimations().get(item)){
+                if (AnimationCreator.getInstance().getCurretAnimation() == AnimationCreator.getInstance().getAnimations().get(item)) {
                     //You cant remove currect animation
                     Toast.makeText(MainActivity.this, "You can not remove working animation", Toast.LENGTH_LONG).show();
                 } else {
@@ -209,15 +222,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void removeStage() {
         List<String> listItems = new ArrayList<String>();
-        for(Stage value : StageSaver.getInstance().getStages())
-            listItems.add(value.name);
+        for (Stage value : StageSaver.getInstance().getStages())
+            listItems.add(value.getName());
         final CharSequence[] stages2 = listItems.toArray(new CharSequence[listItems.size()]);
         final AlertDialog levelDialog;
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Select a stage to remove");
         builder.setSingleChoiceItems(stages2, -1, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
-                Toast.makeText(MainActivity.this, "Stage " + StageSaver.getInstance().getStages().get(item).name + " removed!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Stage " +
+                        StageSaver.getInstance().getStages().get(item).getName() + " removed!", Toast.LENGTH_LONG).show();
                 StageSaver.getInstance().removeStage(item);
                 dialog.dismiss();
             }
@@ -230,7 +244,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Dialog
         List<String> listItems = new ArrayList<String>();
-        for(Animation value : AnimationCreator.getInstance().getAnimations()){
+        for (Animation value : AnimationCreator.getInstance().getAnimations()) {
             Log.i("Stage reader opener", " " + value.getName());
             listItems.add(value.getName());
         }
@@ -250,7 +264,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 //show animation in screen
                 for (int i = 0; i <= Variables.numberOfWindows; i++) {
                     Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(
-                            AnimationCreator.getInstance().getAnimations().get(item).getStages().get(timeLine.getProgress()).rgbValue[i]);
+                            AnimationCreator.getInstance().getAnimations().get(item).getStages().get(timeLine.getProgress()).getRgbValue()[i]);
                 }
                 dialog.dismiss();
                 Toast.makeText(MainActivity.this, "Animation " +
@@ -263,9 +277,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void openStage() {
         List<String> listItems = new ArrayList<String>();
-        for(Stage value : StageSaver.getInstance().getStages()){
-            Log.i("Stage reader opener", " " + value.name);
-            listItems.add(value.name);
+        for (Stage value : StageSaver.getInstance().getStages()) {
+            Log.i("Stage reader opener", " " + value.getName());
+            listItems.add(value.getName());
         }
 
         final CharSequence[] stages2 = listItems.toArray(new CharSequence[listItems.size()]);
@@ -276,15 +290,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(DialogInterface dialog, int item) {
                 for (int i = 0; i <= Variables.numberOfWindows; i++) {
                     Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(
-                            StageSaver.getInstance().getStages().get(item).rgbValue[i]);
+                            StageSaver.getInstance().getStages().get(item).getRgbValue()[i]);
                 }
-                if(Variables.getInstance().isAnimationBarShowed){
+                if (Variables.getInstance().isAnimationBarShowed) {
                     AnimationCreator.getInstance().replaceStageInAnimation(
                             Variables.getInstance().awesomeViewsArr, timeLine.getProgress());
                 }
+                updateStageOnScreen();
                 dialog.dismiss();
                 Toast.makeText(MainActivity.this, "Stage " +
-                        StageSaver.getInstance().getStages().get(item).name + " opened!", Toast.LENGTH_LONG).show();
+                        StageSaver.getInstance().getStages().get(item).getName() + " opened!", Toast.LENGTH_LONG).show();
             }
         });
         levelDialog = builder.create();
@@ -313,12 +328,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void resetStage() {
-        for(int i = 0; i <= Variables.numberOfWindows; i++){
+        for (int i = 0; i <= Variables.numberOfWindows; i++) {
             Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(Color.BLACK);
         }
     }
 
-    private void setupColorSlider(){
+    private void setupColorSlider() {
         colorSlider = findViewById(R.id.color_slider);
         colorSlider.setColors(new int[]{
                 Color.parseColor("#000000"), Color.parseColor("#FC0FC0"),
@@ -348,9 +363,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         timeLine.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                for(int i = 0; i <= Variables.numberOfWindows; i++) {
+                for (int i = 0; i <= Variables.numberOfWindows; i++) {
                     Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(
-                            AnimationCreator.getInstance().curretAnimation.getStages().get(timeLine.getProgress()).rgbValue[i]);
+                            AnimationCreator.getInstance().curretAnimation.getStages().get(timeLine.getProgress()).getRgbValue()[i]);
                 }
                 Variables.getInstance().valueOfTimeLineBar = timeLine.getProgress();
             }
@@ -380,7 +395,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         minusStageToAnimationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if((timeLine.getMax() - 1) < 0) {
+                if ((timeLine.getMax() - 1) < 0) {
                     resetStage();
                 } else {
                     AnimationCreator.getInstance().removeStageFromAnimation(timeLine.getProgress());
@@ -394,7 +409,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void addListinerToViews() {
-        for(int i = 0; i <= Variables.numberOfWindows; i++){
+        for (int i = 0; i <= Variables.numberOfWindows; i++) {
             Variables.getInstance().awesomeViewsArr[i] = findViewById(viewIdArr[i]);
             Variables.getInstance().awesomeViewsArr[i].setOnClickListener(new MyOnClickListiner(Variables.getInstance().awesomeViewsArr[i]));
         }
@@ -418,7 +433,55 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onDestroy();
     }
 
+    public void updateStageOnScreen() {
+        //Send to server
+        if (Variables.getInstance().isLiveMode)
+            StageSender.getInstance().sendActualStageToServer();
+
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            DisplayMetrics metrics = this.getResources().getDisplayMetrics();
+            float width = metrics.widthPixels;
+            float height = metrics.heightPixels;
+            float x = event.getRawX();
+            float y = event.getRawY();
+            Log.d("Touch,", "touch3  " + x + "   " + y);
+            Log.d("Touch,", "touch3  " + width + "   " + height);
+
+            x /= width;
+            y /= height;
+
+            x -= 0.5;
+            y -= 0.5;
+            if (Variables.getInstance().isSnake)
+                controlSnake(x, y);
+        }
+
+
+        return super.dispatchTouchEvent(event);
+    }
+
     public static Context getAppContext() {
         return MainActivity.context;
     }
+
+    private void controlSnake(float x, float y) {
+        if (Math.abs(x) - Math.abs(y) > 0) {
+            if (x > 0) {
+                snake.setSnakeDirection(SnakeController.Direction.RIGHT);
+            } else {
+                snake.setSnakeDirection(SnakeController.Direction.LEFT);
+            }
+        } else {
+            if (y > 0) {
+                snake.setSnakeDirection(SnakeController.Direction.UP);
+            } else {
+                snake.setSnakeDirection(SnakeController.Direction.DOWN);
+            }
+        }
+    }
+
 }

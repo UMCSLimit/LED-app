@@ -18,8 +18,11 @@ public class Variables {
 
     public static int numberOfWindows = 127;
     public boolean isLiveMode = false;
-    public View awesomeViewsArr[] = new View[140];
+    public View awesomeViewsArr[] = new View[128];
     public boolean wasSettingOpen = false;
     public boolean isAnimationBarShowed = false;
     public int valueOfTimeLineBar = 0;
+    public boolean isSnake = false;
+    public int gameLevel = 3;
+
 }

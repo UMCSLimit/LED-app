@@ -9,11 +9,11 @@
         android:defaultValue="false"/>
 
     <ListPreference
-        android:key="pref_sync_connection_type"
-        android:title="@string/pref_syncConnectionType"
-        android:entries="@array/pref_syncConnectionType_entreies"
-        android:entryValues="@array/pref_syncConnectionType_values"
-        android:defaultValue="@string/pref_syncConnectionType_default_value"
-        android:summary="@string/pref_syncConnectionType"/>
+        android:key="pref_gameLevel"
+        android:title="@string/pref_gameLevel"
+        android:entries="@array/pref_gameLevel_entreies"
+        android:entryValues="@array/pref_gameLevel_values"
+        android:defaultValue="@string/pref_gameLevel_default_value"
+        android:summary="@string/pref_gameLevel"/>
 
 </PreferenceScreen>

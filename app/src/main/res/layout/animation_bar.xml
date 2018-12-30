@@ -2,10 +2,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="120px"
-    android:id="@+id/animation_bar">
+    android:id="@+id/animation_bar"
+    android:background="#aaaaaa">
 
     <Button
         android:id="@+id/an_remove_stage"
+        android:background="#cccccc"
+        android:layout_gravity="center"
         android:layout_width="1dp"
         android:layout_height="50dp"
         android:height="0dp"
@@ -15,6 +18,7 @@
     <SeekBar
         android:id="@+id/time_line_bar"
         android:layout_width="1dp"
+
         android:layout_height="match_parent"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
         android:layout_weight="10"
@@ -23,18 +27,25 @@
 
     <EditText
         android:id="@+id/editText"
+        android:hint="ms"
+        android:gravity="center"
+        android:background="#cccccc"
+        android:layout_gravity="center"
+        android:textSize="10dp"
+        android:text="1000"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:ems="3"
         android:inputType="number"/>
 
     <Button
         android:id="@+id/an_add_stage"
+        android:layout_gravity="center"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_marginLeft="2dp"
+        android:layout_height="match_parent"
+        android:background="#cccccc"
         android:height="0dp"
         android:layout_weight="1"
         android:text="+"/>

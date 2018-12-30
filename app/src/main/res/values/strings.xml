@@ -5,21 +5,24 @@
 
     <string name="live_mode">Live mode</string>
     <string name="sync_pref_summery">Control LED with your screen in real time</string>
-    <string name="pref_syncConnectionType">Live Mode Connection Type</string>
-    <string name="pref_syncConnectionType_dialog_title">Preform Live Mode Using</string>
-    <string name="pref_syncConnectionType_default_value">WiFi</string>
-    <string name="pref_syncConnectionType_summary">WiFi</string>
 
-    <string-array name="pref_syncConnectionType_entreies">
-        <item>WiFi</item>
-        <item>Mobile Data</item>
-        <item>Wifi/Mobile Data</item>
+    <string name="pref_gameLevel">Games level</string>
+    <string name="pref_gameLevel_dialog_title">Change your games level</string>
+    <string name="pref_gameLevel_default_value">Level3</string>
+    <string name="pref_gameLevel_summary">Level 3</string>
+
+    <string-array name="pref_gameLevel_entreies">
+        <item>Level 1</item>
+        <item>Level 2</item>
+        <item>Level 3</item>
+        <item>Level 4</item>
     </string-array>
 
-    <string-array name="pref_syncConnectionType_values">
-        <item>WiFi</item>
-        <item>Mobile</item>
-        <item>Wifi_Mobile</item>
+    <string-array name="pref_gameLevel_values">
+        <item>level1</item>
+        <item>level2</item>
+        <item>level3</item>
+        <item>level4</item>
     </string-array>
 
 </resources>
