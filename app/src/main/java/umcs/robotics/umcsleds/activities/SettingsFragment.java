@@ -1,10 +1,14 @@
-package umcs.robotics.umcsleds;
+package umcs.robotics.umcsleds.activities;
 
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+
+import umcs.robotics.umcsleds.R;
+import umcs.robotics.umcsleds.configFiles.Variables;
+import umcs.robotics.umcsleds.service.StageSender;
 
 public class SettingsFragment extends PreferenceFragment {
 
@@ -28,6 +32,8 @@ public class SettingsFragment extends PreferenceFragment {
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 if ((Boolean) newValue) {
                     Variables.getInstance().isLiveMode = true;
+                    StageSender.getInstance();
+
                 } else {
                     Variables.getInstance().isLiveMode = false;
                 }

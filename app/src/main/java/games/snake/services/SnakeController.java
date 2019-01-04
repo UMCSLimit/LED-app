@@ -1,15 +1,15 @@
-package snake.services;
+package games.snake.services;
 
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
 
 import java.util.ArrayList;
 
-import snake.entities.Food;
-import snake.entities.GameObject;
-import snake.entities.SnakeSegment;
-import umcs.robotics.umcsleds.StageSetter;
-import umcs.robotics.umcsleds.Variables;
+import games.snake.entities.Food;
+import games.snake.entities.GameObject;
+import games.snake.entities.SnakeSegment;
+import umcs.robotics.umcsleds.service.StageSetter;
+import umcs.robotics.umcsleds.configFiles.Variables;
 
 public class SnakeController {
 
@@ -28,8 +28,8 @@ public class SnakeController {
     private int yDir = -1;
 
     //Start
-    private int xStart = 26;
-    private int yStart = 1;
+    private int xStart = 20;
+    private int yStart = 2;
 
     //Previous
     private int prevDirX = 0;
@@ -57,8 +57,7 @@ public class SnakeController {
             renderStartGame();
             isGameStarted = true;
         } else {
-            checkInput();
-            movingSnake();
+            checkInputAndMoveSnake();
             checkCollisionWithFood();
             checkGameOverConditionals();
             render();
@@ -84,8 +83,8 @@ public class SnakeController {
         Food f = new Food();
         objects.add(f);
         foods.add(f);
-        f.x = 16;
-        f.y = 1;
+        f.x = randomX();
+        f.y = (int) (Math.random() * 3 + 1);
     }
 
     private void checkInput() {
@@ -118,16 +117,18 @@ public class SnakeController {
 
     private int deleyY = 0;
 
-    private void movingSnake() {
-        //3Times slower for Y
+    private void checkInputAndMoveSnake() {
+        //x times slower for Y
         if (yDir != 0) {
-            if (deleyY >= 3) {
+            if (deleyY >= 1) {
+                checkInput();
                 moveSnakeBody();
                 deleyY = 0;
             } else {
                 deleyY++;
             }
         } else {
+            checkInput();
             moveSnakeBody();
         }
     }
@@ -165,7 +166,7 @@ public class SnakeController {
     }
 
     private void checkGameOverConditionals() {
-        //checkCollisionWithOwnBody();
+        checkCollisionWithOwnBody();
         overTheMap();
     }
 
@@ -203,13 +204,14 @@ public class SnakeController {
 
                     SnakeSegment ss1 = new SnakeSegment();
 
-                    ss1.x = tail.x - xDir;
-                    ss1.y = tail.y - yDir;
+                    ss1.x = tail.x;
+                    ss1.y = tail.y;
 
                     snakeBody.add(ss1);
                     objects.add(ss1);
 
                     newFood();
+                    Variables.getInstance().scoreTextView.setText((snakeBody.size()) + " points");
 
                     break;
                 }
@@ -232,7 +234,10 @@ public class SnakeController {
                 f3.y = randomY();
                 //break and check position of food for new coordinates
                 i = 0;
-                break;
+            } else if (f3.x < noWindowsSpace && f3.y == 0){
+                f3.x = randomX();
+                f3.y = randomY();
+                i = 0;
             }
         }
 
@@ -243,7 +248,7 @@ public class SnakeController {
     private void render() {
         if (isGameOver) {
             renderGameOverScreen();
-            Variables.getInstance().isSnake = true;
+            Variables.getInstance().isSnake = false;
         } else {
             renderGameState();
         }
@@ -267,7 +272,6 @@ public class SnakeController {
     }
 
     public void renderGameOverScreen() {
-
 
         try {
             StageSetter.getInstance().BLACK();
@@ -315,12 +319,12 @@ public class SnakeController {
                         for (GameObject s : objects) {
                             if (s.x == x && s.y == y) {
                                 if (s instanceof SnakeSegment) {
-                                    changeColorOfView(viewId, Color.GREEN);
+                                    changeColorOfView(viewId, ((SnakeSegment) s).color);
                                     System.out.print("*");
                                     wasSthPrinted = true;
                                     break;
                                 } else if (s instanceof Food) {
-                                    changeColorOfView(viewId, Color.RED);
+                                    changeColorOfView(viewId, ((Food) s).color);
                                     System.out.print("F");
                                     wasSthPrinted = true;
                                     break;
@@ -340,7 +344,7 @@ public class SnakeController {
     }
 
     private void changeColorOfView(int id, @ColorInt int color) {
-        Variables.getInstance().awesomeViewsArr[id].setBackgroundColor(color);
+        Variables.getInstance().changeColorOfView(id, color);
     }
 
     public void setDirection(Direction direction) {

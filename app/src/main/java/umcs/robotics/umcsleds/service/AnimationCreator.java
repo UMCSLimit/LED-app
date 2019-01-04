@@ -1,4 +1,4 @@
-package umcs.robotics.umcsleds;
+package umcs.robotics.umcsleds.service;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -14,6 +14,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import umcs.robotics.umcsleds.activities.MainActivity;
+import umcs.robotics.umcsleds.configFiles.Variables;
+import umcs.robotics.umcsleds.dataTemplate.Animation;
+import umcs.robotics.umcsleds.dataTemplate.Stage;
 
 public class AnimationCreator {
 

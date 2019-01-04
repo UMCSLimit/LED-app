@@ -1,4 +1,4 @@
-package umcs.robotics.umcsleds;
+package umcs.robotics.umcsleds.activities;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -30,8 +31,14 @@ import com.github.naz013.colorslider.ColorSlider;
 import java.util.ArrayList;
 import java.util.List;
 
-import snake.Snake;
-import snake.services.SnakeController;
+import games.snake.Snake;
+import games.snake.services.SnakeController;
+import umcs.robotics.umcsleds.R;
+import umcs.robotics.umcsleds.configFiles.Variables;
+import umcs.robotics.umcsleds.dataTemplate.Animation;
+import umcs.robotics.umcsleds.dataTemplate.Stage;
+import umcs.robotics.umcsleds.service.AnimationCreator;
+import umcs.robotics.umcsleds.service.StageSaver;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -46,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private Snake snake;
 
+    private NavigationView mNavigationView;
 
     public int viewIdArr[] = {
             //R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5, R.id.view6, R.id.view7, R.id.view8, R.id.view9, R.id.view10, R.id.view11,
@@ -85,6 +93,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Context
         MainActivity.context = getApplicationContext();
 
+        Variables.getInstance().scoreTextView = findViewById(R.id.scoreText);
+
         //Read saved stages
         StageSaver.getInstance();
 
@@ -95,10 +105,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         hideStatusBar();
 
         //Add listiners to views
-        addListinerToViews();
+        initViews();
 
         //Navigation Drawer
-        NavigationView mNavigationView = (NavigationView) findViewById(R.id.nav_item);
+        mNavigationView = findViewById(R.id.nav_item);
         mNavigationView.setNavigationItemSelectedListener(this);
 
         //Hide Status Bar
@@ -106,13 +116,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Animation options bar
         setupAnimationBar();
-
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
-        if (id == R.id.d_reset) {
+        if (id == R.id.d_single_stage) {
+            prepareDrawingStage();
+            hideAnimationBar();
+        } else if (id == R.id.d_animations) {
+            prepareDrawingStage();
+            showAndHideAnimationBar();
+        } else if (id == R.id.d_snake) {
+            startSnake();
+        } else if (id == R.id.d_reset) {
             resetStage();
             Toast.makeText(this, "Reset is done!", Toast.LENGTH_LONG).show();
         } else if (id == R.id.d_save) {
@@ -125,20 +142,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             remove();
         } else if (id == R.id.d_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
-        } else if (id == R.id.d_animations) {
-            showAndHideAnimationBar();
-        } else if (id == R.id.d_single_stage) {
-            hideAnimationBar();
-        } else if (id == R.id.d_snake) {
-            startSnake();
         }
+
+        //Hide menu
+        DrawerLayout drawerLayout = findViewById(R.id.drawer);
+        drawerLayout.closeDrawer(Gravity.START);
         return false;
     }
 
+    private void prepareDrawingStage() {
+        colorSlider.setVisibility(View.VISIBLE);
+        Variables.getInstance().scoreTextView.setVisibility(View.GONE);
+    }
+
     private void startSnake() {
+
         hideStatusBar();
-        snake = new Snake();
+        hideAnimationBar();
+
+        //In the case of running 2 snakes in one time
+        if (snake != null) {
+            if (snake.isGameOver()) {
+                snake = new Snake();
+            }
+        } else {
+            snake = new Snake();
+        }
+
+        Variables.getInstance().scoreTextView.setText("0 points");
         Variables.getInstance().isSnake = true;
+        colorSlider.setVisibility(View.GONE);
+        Variables.getInstance().scoreTextView.setVisibility(View.VISIBLE);
     }
 
     private void showAndHideAnimationBar() {
@@ -263,8 +297,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 timeLine.setProgress(0);
                 //show animation in screen
                 for (int i = 0; i <= Variables.numberOfWindows; i++) {
-                    Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(
-                            AnimationCreator.getInstance().getAnimations().get(item).getStages().get(timeLine.getProgress()).getRgbValue()[i]);
+                    Variables.getInstance().changeColorOfView(i ,AnimationCreator.getInstance().getAnimations().get(item).getStages().get(timeLine.getProgress()).getRgbValue()[i]);
                 }
                 dialog.dismiss();
                 Toast.makeText(MainActivity.this, "Animation " +
@@ -289,14 +322,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         builder.setSingleChoiceItems(stages2, -1, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
                 for (int i = 0; i <= Variables.numberOfWindows; i++) {
-                    Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(
-                            StageSaver.getInstance().getStages().get(item).getRgbValue()[i]);
+                    Variables.getInstance().changeColorOfView(i, StageSaver.getInstance().getStages().get(item).getRgbValue()[i]);
                 }
                 if (Variables.getInstance().isAnimationBarShowed) {
                     AnimationCreator.getInstance().replaceStageInAnimation(
                             Variables.getInstance().awesomeViewsArr, timeLine.getProgress());
                 }
-                updateStageOnScreen();
                 dialog.dismiss();
                 Toast.makeText(MainActivity.this, "Stage " +
                         StageSaver.getInstance().getStages().get(item).getName() + " opened!", Toast.LENGTH_LONG).show();
@@ -329,7 +360,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void resetStage() {
         for (int i = 0; i <= Variables.numberOfWindows; i++) {
-            Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(Color.BLACK);
+            Variables.getInstance().changeColorOfView(i, Color.BLACK);
         }
     }
 
@@ -364,7 +395,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 for (int i = 0; i <= Variables.numberOfWindows; i++) {
-                    Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(
+                    Variables.getInstance().changeColorOfView(i,
                             AnimationCreator.getInstance().curretAnimation.getStages().get(timeLine.getProgress()).getRgbValue()[i]);
                 }
                 Variables.getInstance().valueOfTimeLineBar = timeLine.getProgress();
@@ -408,10 +439,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         hideAnimationBar();
     }
 
-    private void addListinerToViews() {
+    private void initViews() {
         for (int i = 0; i <= Variables.numberOfWindows; i++) {
             Variables.getInstance().awesomeViewsArr[i] = findViewById(viewIdArr[i]);
-            Variables.getInstance().awesomeViewsArr[i].setOnClickListener(new MyOnClickListiner(Variables.getInstance().awesomeViewsArr[i]));
+            //Variables.getInstance().awesomeViewsArr[i].setOnClickListener(new MyOnClickListiner(Variables.getInstance().awesomeViewsArr[i]));
         }
     }
 
@@ -433,36 +464,58 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onDestroy();
     }
 
-    public void updateStageOnScreen() {
-        //Send to server
-        if (Variables.getInstance().isLiveMode)
-            StageSender.getInstance().sendActualStageToServer();
-
-    }
-
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+        if (event.getAction() == MotionEvent.ACTION_MOVE
+                || event.getAction() == MotionEvent.ACTION_DOWN) {
             DisplayMetrics metrics = this.getResources().getDisplayMetrics();
             float width = metrics.widthPixels;
             float height = metrics.heightPixels;
+
             float x = event.getRawX();
             float y = event.getRawY();
-            Log.d("Touch,", "touch3  " + x + "   " + y);
-            Log.d("Touch,", "touch3  " + width + "   " + height);
 
             x /= width;
             y /= height;
 
-            x -= 0.5;
-            y -= 0.5;
-            if (Variables.getInstance().isSnake)
+            Log.d("Touch,", "touch3  " + x + "   " + y);
+            Log.d("Touch,", "touch3  " + width + "   " + height);
+
+            if (Variables.getInstance().isSnake) {
+                x -= 0.5;
+                y -= 0.5;
                 controlSnake(x, y);
+            } else if (Variables.getInstance().isAnimationBarShowed) {
+                //Changing color of view on slides
+                x *= 28;
+                y *= 6;
+                changeColorsOfViews((int) x, (int) y);
+            } else {
+                //Changing color of view on slides
+                x *= 28;
+                y *= 5;
+                changeColorsOfViews((int) x, (int) y);
+            }
+
         }
-
-
         return super.dispatchTouchEvent(event);
     }
+
+    private void changeColorsOfViews(int x, int y) {
+        int mapX = 28;
+        int noWindowsSpace = 12;
+
+        int viewId = y * (mapX) + x;
+        Log.d("Touch,", "touch3 id  " + viewId);
+        if (y == 0 && x < noWindowsSpace) {
+        } else {
+            viewId -= noWindowsSpace;
+            if (viewId <= 127) {
+                Variables.getInstance().changeColorOfView(viewId);
+            }
+        }
+    }
+
 
     public static Context getAppContext() {
         return MainActivity.context;

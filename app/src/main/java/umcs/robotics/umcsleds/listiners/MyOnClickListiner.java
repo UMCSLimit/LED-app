@@ -1,7 +1,11 @@
-package umcs.robotics.umcsleds;
+package umcs.robotics.umcsleds.listiners;
 
 import android.support.annotation.ColorInt;
 import android.view.View;
+
+import umcs.robotics.umcsleds.configFiles.Variables;
+import umcs.robotics.umcsleds.service.AnimationCreator;
+import umcs.robotics.umcsleds.service.StageSender;
 
 public class MyOnClickListiner implements View.OnClickListener {
 

@@ -1,12 +1,12 @@
-package umcs.robotics.umcsleds;
+package umcs.robotics.umcsleds.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
+
+import umcs.robotics.umcsleds.R;
 
 public class SettingsActivity extends AppCompatActivity {
 

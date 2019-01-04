@@ -1,4 +1,4 @@
-package umcs.robotics.umcsleds;
+package umcs.robotics.umcsleds.dataTemplate;
 
 import java.io.Serializable;
 import java.util.ArrayList;

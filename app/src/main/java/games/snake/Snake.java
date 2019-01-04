@@ -1,20 +1,24 @@
-package snake;
+package games.snake;
 
-import snake.services.SnakeController;
-import umcs.robotics.umcsleds.Variables;
+import games.snake.services.SnakeController;
+import umcs.robotics.umcsleds.service.StageSender;
+import umcs.robotics.umcsleds.configFiles.Variables;
 
-public class Snake {
+public class Snake  {
 
     private SnakeController snakeController;
 
-    private int LEVEL = 3;
+    private int LEVEL;
 
     public Snake() {
+        startGame();
+    }
+
+    public void startGame(){
+        LEVEL = Variables.getInstance().gameLevel;
 
         snakeController = new SnakeController();
         snakeController.init();
-
-        LEVEL = Variables.getInstance().gameLevel;
 
         Thread thread = new Thread() {
             @Override
@@ -22,7 +26,10 @@ public class Snake {
                 try {
                     while (!snakeController.isGameOver) {
                         snakeController.update();
-                        sleep(300 / (LEVEL * 2));
+                        if(Variables.getInstance().isLiveMode){
+                            StageSender.getInstance().sendActualStageToServer();
+                        }
+                        sleep(400 / (LEVEL * 2));
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -30,6 +37,10 @@ public class Snake {
             }
         };
         thread.start();
+    }
+
+    public boolean isGameOver(){
+        return snakeController.isGameOver;
     }
 
     public void setSnakeDirection(SnakeController.Direction dir) {

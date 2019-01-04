@@ -11,6 +11,9 @@
             android:id="@+id/d_animations"
             android:title="New animation Mode" />
         <item
+            android:id="@+id/d_snake"
+            android:title="Snake" />
+        <item
             android:id="@+id/d_reset"
             android:title="Reset stage" />
         <item
@@ -25,9 +28,6 @@
         <item
             android:id="@+id/d_remove"
             android:title="Remove" />
-        <item
-            android:id="@+id/d_snake"
-            android:title="Snake" />
         <item
             android:id="@+id/d_settings"
             android:title="Settings" />

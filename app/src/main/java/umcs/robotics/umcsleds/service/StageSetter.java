@@ -1,7 +1,9 @@
-package umcs.robotics.umcsleds;
+package umcs.robotics.umcsleds.service;
 
 import android.graphics.Color;
 import android.util.Log;
+
+import umcs.robotics.umcsleds.configFiles.Variables;
 
 public class StageSetter {
 
@@ -71,6 +73,12 @@ public class StageSetter {
 
             Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(color);
         }
+
+        if (Variables.getInstance().isLiveMode) {
+            StageSender.getInstance().sendActualStageToServer();
+        }
     }
+
+
 
 }

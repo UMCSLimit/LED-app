@@ -6,7 +6,7 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <LinearLayout
         android:id="@+id/liniarLayoutVertical"
@@ -25,6 +25,18 @@
             android:weightSum="28"
             android:showDividers="middle"
             android:divider="@drawable/empty_tall_divider">
+
+            <TextView
+                android:id="@+id/scoreText"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_weight="12"
+                android:visibility="gone"
+                android:text="0 points"
+                android:textSize="50dp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:gravity="center"/>
 
             <com.github.naz013.colorslider.ColorSlider
                 android:background="#dadada"

@@ -1,4 +1,4 @@
-package snake.entities;
+package games.snake.entities;
 
 import android.support.annotation.ColorInt;
 
