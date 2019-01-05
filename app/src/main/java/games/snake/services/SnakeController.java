@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import games.snake.entities.Food;
 import games.snake.entities.GameObject;
 import games.snake.entities.SnakeSegment;
+import games.spaceShooter.entities.Meteoryt;
 import umcs.robotics.umcsleds.service.StageSetter;
 import umcs.robotics.umcsleds.configFiles.Variables;
 
@@ -35,9 +36,10 @@ public class SnakeController {
     private int prevDirX = 0;
     private int prevDirY = 0;
 
-    //game over
+    //game states
     public boolean isGameOver = false;
     public boolean isGameStarted = false;
+
     //MapSize
     private int mapX = 28;
     private int mapY = 5;
@@ -247,8 +249,9 @@ public class SnakeController {
 
     private void render() {
         if (isGameOver) {
+            Variables.getInstance().isGameRunning = false;
             renderGameOverScreen();
-            Variables.getInstance().isSnake = false;
+            renderGameOverScreen();
         } else {
             renderGameState();
         }

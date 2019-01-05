@@ -33,6 +33,8 @@ import java.util.List;
 
 import games.snake.Snake;
 import games.snake.services.SnakeController;
+import games.spaceShooter.SpaceShooter;
+import games.spaceShooter.services.SpaceController;
 import umcs.robotics.umcsleds.R;
 import umcs.robotics.umcsleds.configFiles.Variables;
 import umcs.robotics.umcsleds.dataTemplate.Animation;
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private SeekBar timeLine;
 
     private Snake snake;
+    private SpaceShooter spaceShooter;
 
     private NavigationView mNavigationView;
 
@@ -129,7 +132,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             showAndHideAnimationBar();
         } else if (id == R.id.d_snake) {
             startSnake();
-        } else if (id == R.id.d_reset) {
+        } else if (id == R.id.d_space_shooter) {
+            startSpaceShooter();
+        }else if (id == R.id.d_reset) {
             resetStage();
             Toast.makeText(this, "Reset is done!", Toast.LENGTH_LONG).show();
         } else if (id == R.id.d_save) {
@@ -150,6 +155,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return false;
     }
 
+
+
     private void prepareDrawingStage() {
         colorSlider.setVisibility(View.VISIBLE);
         Variables.getInstance().scoreTextView.setVisibility(View.GONE);
@@ -161,18 +168,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         hideAnimationBar();
 
         //In the case of running 2 snakes in one time
-        if (snake != null) {
-            if (snake.isGameOver()) {
+        if(!Variables.getInstance().isGameRunning){
+            if (snake != null) {
+                if (snake.isGameOver()) {
+                    snake = new Snake();
+                }
+            } else {
                 snake = new Snake();
             }
-        } else {
-            snake = new Snake();
         }
 
         Variables.getInstance().scoreTextView.setText("0 points");
-        Variables.getInstance().isSnake = true;
+        Variables.getInstance().isGameRunning = true;
         colorSlider.setVisibility(View.GONE);
         Variables.getInstance().scoreTextView.setVisibility(View.VISIBLE);
+    }
+
+    private void startSpaceShooter() {
+        hideStatusBar();
+        hideAnimationBar();
+
+        //In the case of running 2 snakes in one time
+        if (spaceShooter != null) {
+            if (spaceShooter.isGameOver()) {
+                spaceShooter = new SpaceShooter();
+            }
+        } else {
+            spaceShooter = new SpaceShooter();
+        }
+
+        Variables.getInstance().scoreTextView.setText("0 points");
+        Variables.getInstance().isGameRunning = true;
+        colorSlider.setVisibility(View.GONE);
+        Variables.getInstance().scoreTextView.setVisibility(View.VISIBLE);
+
     }
 
     private void showAndHideAnimationBar() {
@@ -481,10 +510,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Log.d("Touch,", "touch3  " + x + "   " + y);
             Log.d("Touch,", "touch3  " + width + "   " + height);
 
-            if (Variables.getInstance().isSnake) {
+            if (Variables.getInstance().isGameRunning) {
                 x -= 0.5;
                 y -= 0.5;
-                controlSnake(x, y);
+                if(snake != null){
+                    controlSnake(x, y);
+                }
+                if(spaceShooter != null){
+                    controlSpaceShooter(x, y);
+                }
             } else if (Variables.getInstance().isAnimationBarShowed) {
                 //Changing color of view on slides
                 x *= 28;
@@ -499,6 +533,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
         return super.dispatchTouchEvent(event);
+    }
+
+    private void controlSpaceShooter(float x, float y) {
+        if(x < 0){
+            spaceShooter.setSpaceShipMove(SpaceController.Moves.SHOOT);
+        } else if(x > 0 && y < 0){
+            spaceShooter.setSpaceShipMove(SpaceController.Moves.UP);
+        } else if(x > 0 && y > 0){
+            spaceShooter.setSpaceShipMove(SpaceController.Moves.DOWN);
+        }
+
     }
 
     private void changeColorsOfViews(int x, int y) {

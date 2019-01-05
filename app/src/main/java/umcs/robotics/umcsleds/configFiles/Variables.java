@@ -25,7 +25,7 @@ public class Variables {
     public boolean wasSettingOpen = false;
     public boolean isAnimationBarShowed = false;
     public int valueOfTimeLineBar = 0;
-    public boolean isSnake = false;
+    public boolean isGameRunning = false;
     public int gameLevel = 3;
     public TextView scoreTextView;
 
