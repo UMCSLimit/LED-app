@@ -33,12 +33,13 @@ public class SpaceController {
 
     private double newMeteorPropability = 7;
     private int flagAmmo = 0;
-    private int ammoPerXframes = 6;
+    private int ammoPerXframes = 10;
     private int ammoOverall = 1;
 
     private float points = 0;
     private float pointsForMeteor = 2;
     private float pointsForColision = -10;
+    private int laserDistance = 16;
 
     //MapSize
     private int mapX = 28;
@@ -51,7 +52,6 @@ public class SpaceController {
 
 
     private int LEVEL;
-
 
     public void init() {
         spaceShips = new ArrayList<>();
@@ -81,7 +81,6 @@ public class SpaceController {
             Variables.getInstance().scoreTextView.setText(points + " points");
             points += 0.22 * LEVEL;
             newMeteorPropability = ((10.0 + (double) ammoOverall) / (double) (ammoOverall) * 2.7); //more value = less meteors
-            Log.d("Rozmiar1 ", "newMeteorPropability " + newMeteorPropability + " ammo over" + ammoOverall);
             shootLaser();
             checkCollisions();
             checkGameOver();
@@ -89,11 +88,6 @@ public class SpaceController {
             addingAmmo();
             moveLaserBeem();
         }
-//
-//        Log.d("Rozmiar1 ", "Rozmiar " + meteoryts.size());
-//        Log.d("Rozmiar2 ", "Rozmiar " + spaceShips.size());
-//        Log.d("Rozmiar3 ", "Rozmiar " + laserBeams.size());
-        Log.d("Rozmiar4 ", "Rozmiar " + objects.size());
     }
 
     private void initNewMeteor() {
@@ -154,8 +148,9 @@ public class SpaceController {
         for (int i = 0; i < laserBeams.size(); i++) {
             LaserBeam lb = laserBeams.get(i);
             lb.x -= 1;
-            if(lb.x < 0){
+            if(lb.x < mapX - laserDistance){
                 laserBeams.remove(lb);
+                objects.remove(lb);
             }
         }
     }
@@ -208,10 +203,6 @@ public class SpaceController {
                     spaceShips.get(0).hp -= 2;
                     objects.removeAll(meteoryts);
                     meteoryts.removeAll(meteoryts);
-//                    meteoryts.remove(meteoryt);
-//                    meteoryts.remove(meteoryt1);
-//                    objects.remove(meteoryt);
-//                    objects.remove(meteoryt1);
                     points += pointsForColision * LEVEL;
                 }
             }
