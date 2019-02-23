@@ -1,0 +1,1149 @@
+<contents>Fixtures library by Proxima s.c.</contents>
+<date>05.08.2011</date>
+<release>0.0.23.0</release>
+<count>4</count>
+<item nr="1">
+ <provider>PROXIMA</provider>
+ <model>PX150-W</model>
+ <power>30</power>
+ <description>
+  <en>Linear white LED lamp</en>
+  <pl>lampa LED liniowa bia³a</pl>
+  <de>Weisse Leuchtdiodelinienlampe</de>
+ </description>
+ <geometry shape="square">
+  <width>1000</width>
+  <height>60</height>
+  <anchor>center</anchor>
+ </geometry>
+ <dmx>
+  <range>1</range>
+  <channel nr="1">
+   <function>brightness</function>
+   <color>255,255,255</color>
+   <mode>linear</mode>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Brightness channel</en>
+    <pl>Jasnoœæ</pl>
+   </description>
+  </channel>
+ </dmx>
+</item>
+<item nr="2">
+ <provider>PROXIMA</provider>
+ <model>PX135-W</model>
+ <power>1</power>
+ <description>
+  <en>Point white LED lamp</en>
+  <pl>lampa LED punktowa bia³a</pl>
+  <de>Weisse Leuchtdiodepunktlampe</de>
+ </description>
+ <geometry shape="circle">
+  <diameter>120</diameter>
+  <anchor>center</anchor>
+ </geometry>
+ <dmx>
+  <range>1</range>
+  <channel nr="1">
+   <function>brightness</function>
+   <color>255,255,255</color>
+   <mode>linear</mode>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Brightness channel</en>
+    <pl>Jasnoœæ</pl>
+   </description>
+  </channel>
+ </dmx>
+</item>
+<item nr="3">
+ <provider>PROXIMA</provider>
+ <model>PX150-RGB</model>
+ <power>30</power>
+ <description>
+  <en>Linear RGB LED lamp</en>
+  <pl>lampa LED liniowa RGB</pl>
+  <de>Farbige Leuchtdiodelinienlampe</de>
+ </description>
+ <geometry shape="square">
+  <width>1000</width>
+  <height>60</height>
+  <anchor>center</anchor>
+ </geometry>
+ <dmx>
+  <range>3</range>
+  <channel nr="1">
+   <function>brightness</function>
+   <color name="R">255,0,0</color>
+   <mode>linear</mode>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Red light channel</en>
+    <pl>Kana³ czerwony</pl>
+   </description>
+  </channel>
+  <channel nr="2">
+   <function>brightness</function>
+   <color name="G">0,255,0</color>
+   <mode>linear</mode>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Green light channel</en>
+    <pl>Kana³ zielony</pl>
+   </description>
+  </channel>
+  <channel nr="3">
+   <function>brightness</function>
+   <color name="B">0,0,255</color>
+   <mode>linear</mode>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Blue light channel</en>
+    <pl>Kana³ niebieski</pl>
+   </description>
+  </channel>
+ </dmx>
+</item>
+<item nr="4">
+ <provider>PROXIMA</provider>
+ <model>PX135-RGB</model>
+ <power>1</power>
+ <description>
+  <en>Point RGB LED lamp</en>
+  <pl>lampa LED punktowa RGB</pl>
+  <de>Farbige Leuchtdiodepunktlampe</de>
+ </description>
+ <geometry shape="circle">
+  <diameter>110</diameter>
+  <anchor>center</anchor>
+ </geometry>
+ <dmx>
+  <range>3</range>
+  <channel nr="1">
+   <function>brightness</function>
+   <color name="R">255,0,0</color>
+   <mode>linear</mode>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Red light channel</en>
+    <pl>Kana³ czerwony</pl>
+   </description>
+  </channel>
+  <channel nr="2">
+   <function>brightness</function>
+   <color name="G">0,255,0</color>
+   <mode>linear</mode>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Green light channel</en>
+    <pl>Kana³ zielony</pl>
+   </description>
+  </channel>
+  <channel nr="3">
+   <function>brightness</function>
+   <color name="B">0,0,255</color>
+   <mode>linear</mode>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Blue light channel</en>
+    <pl>Kana³ niebieski</pl>
+   </description>
+  </channel>
+ </dmx>
+</item>
+<item nr="5">
+ <provider>Martin Professional A/S</provider>
+ <model>MAC 700 Profile</model>
+ <variant>Basic</variant>
+ <range>6</range>
+ <power>700</power>
+ <description>
+  <en>moving-head spotlight</en>
+  <pl>ruchoma g³owica œwietlna</pl>
+ </description>
+ <dmx>
+  <channel nr="1">
+   <function>control</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>multizone</mode>
+   <description>
+    <en>Shutter, strobe, reset, lamp on/off</en>
+   </description>
+   <zones>
+    <zone value="0">
+     <start>0</start>
+     <end>19</end>
+     <description>
+      <en>shutter closed</en>
+     </description>
+    </zone>
+    <zone value="35">
+     <start>20</start>
+     <end>49</end>
+     <description>
+      <en>shutter open</en>
+     </description>
+    </zone>
+    <zone value="61">
+     <start>50</start>
+     <end>72</end>
+     <description>
+      <en>Strobe, fast -> slow</en>
+     </description>
+    </zone>
+    <zone value="73">
+     <start>73</start>
+     <end>79</end>
+     <description>
+      <en>Shutter open</en>
+     </description>
+    </zone>
+    <zone value="80">
+     <start>80</start>
+     <end>99</end>
+     <description>
+      <en>Opening pulse, fast -> slow</en>
+     </description>
+    </zone>
+    <zone value="110">
+     <start>100</start>
+     <end>119</end>
+     <description>
+      <en>Closing pulse, fast -> slow</en>
+     </description>
+    </zone>
+    <zone value="124">
+     <start>120</start>
+     <end>127</end>
+     <description>
+      <en>Shutter open</en>
+     </description>
+    </zone>
+    <zone value="137">
+     <start>128</start>
+     <end>147</end>
+     <description>
+      <en>Random strobe, fast</en>
+     </description>
+    </zone>
+    <zone value="158">
+     <start>148</start>
+     <end>167</end>
+     <description>
+      <en>Random strobe, medium</en>
+     </description>
+    </zone>
+    <zone value="178">
+     <start>168</start>
+     <end>187</end>
+     <description>
+      <en>Random strobe, slow</en>
+     </description>
+    </zone>
+    <zone value="189">
+     <start>188</start>
+     <end>190</end>
+     <description>
+      <en>Shutter open</en>
+     </description>
+    </zone>
+    <zone value="192">
+     <start>191</start>
+     <end>193</end>
+     <description>
+      <en>Random opening pulse, fast</en>
+     </description>
+    </zone>
+    <zone value="195">
+     <start>194</start>
+     <end>196</end>
+     <description>
+      <en>Random opening pulse, slow</en>
+     </description>
+    </zone>
+    <zone value="198">
+     <start>197</start>
+     <end>199</end>
+     <description>
+      <en>Random closing pulse, fast</en>
+     </description>
+    </zone>
+    <zone value="201">
+     <start>200</start>
+     <end>202</end>
+     <description>
+      <en>Random closing pulse, slow</en>
+     </description>
+    </zone>
+    <zone value="205">
+     <start>203</start>
+     <end>207</end>
+     <description>
+      <en>undefined</en>
+      <pl>niezdefiniowana</pl>
+     </description>
+    </zone>
+    <zone value="212">
+     <start>208</start>
+     <end>217</end>
+     <description>
+      <en>Reset fixture</en>
+     </description>
+    </zone>
+    <zone value="230">
+     <start>218</start>
+     <end>242</end>
+     <description>
+      <en>undefined</en>
+      <pl>niezdefiniowana</pl>
+     </description>
+    </zone>
+    <zone value="245">
+     <start>243</start>
+     <end>247</end>
+     <description>
+      <en>700 W mode</en>
+     </description>
+    </zone>
+    <zone value="251">
+     <start>248</start>
+     <end>255</end>
+     <description>
+      <en>undefined</en>
+      <pl>niezdefiniowana</pl>
+     </description>
+    </zone>
+   </zones>
+  </channel>
+  <channel nr="2">
+   <function>dimmer</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Dimmer</en>
+   </description>
+  </channel>
+  <channel nr="3">
+   <function>filter</function>
+   <color>0,255,255</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>cyan filter</en>
+   </description>
+  </channel>
+  <channel nr="4">
+   <function>filter</function>
+   <color>255,0,255</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>magenta filter</en>
+   </description>
+  </channel>
+  <channel nr="5">
+   <function>filter</function>
+   <color>255,255,0</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>yellow filter</en>
+   </description>
+  </channel>
+ </dmx>
+ <geometry shape="circle">
+  <diameter>120</diameter>
+  <anchor>center</anchor>
+ </geometry>
+</item>
+<item nr="6">
+ <provider>Martin Professional A/S</provider>
+ <model>MAC 700 Profile</model>
+ <variant>Extended</variant>
+ <power>700</power>
+ <description>
+  <en>moving-head spotlight</en>
+  <pl>ruchoma g³owica œwietlna</pl>
+ </description>
+ <geometry>
+  <anchor>center</anchor>
+ </geometry>
+</item>
+<item nr="8">
+ <provider>SGM</provider>
+ <model>Ribalta</model>
+ <variant>std</variant>
+ <power>150</power>
+ <dmx>
+  <range>9</range>
+  <channel nr="1">
+   <function>control</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Shutter/Strobe</en>
+   </description>
+  </channel>
+  <channel nr="2">
+   <function>dimmer</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Dimmer</en>
+   </description>
+  </channel>
+  <channel nr="3">
+   <function>brightness</function>
+   <color>255,0,0</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Red</en>
+   </description>
+  </channel>
+  <channel nr="4">
+   <function>brightness</function>
+   <color>0,255,0</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Green</en>
+   </description>
+  </channel>
+  <channel nr="5">
+   <function>brightness</function>
+   <color>0,0,255</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Blue</en>
+   </description>
+  </channel>
+  <channel nr="6">
+   <function>filter</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>CTC</en>
+   </description>
+  </channel>
+  <channel nr="7">
+   <function>control</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>multizone</mode>
+   <description>
+    <en>Macro</en>
+   </description>
+   <zones>
+    <zone value="0">
+     <start>0</start>
+     <end>7</end>
+     <description>
+      <en>No macro</en>
+     </description>
+    </zone>
+    <zone value="10">
+     <start>8</start>
+     <end>15</end>
+     <description>
+      <en>Macro1</en>
+     </description>
+    </zone>
+    <zone value="20">
+     <start>16</start>
+     <end>23</end>
+     <description>
+      <en>Macro2</en>
+     </description>
+    </zone>
+    <zone value="24">
+     <start>24</start>
+     <end>31</end>
+     <description>
+      <en>Macro3</en>
+     </description>
+    </zone>
+    <zone value="35">
+     <start>32</start>
+     <end>39</end>
+     <description>
+      <en>Macro4</en>
+     </description>
+    </zone>
+    <zone value="40">
+     <start>40</start>
+     <end>47</end>
+     <description>
+      <en>Macro5</en>
+     </description>
+    </zone>
+    <zone value="50">
+     <start>48</start>
+     <end>55</end>
+     <description>
+      <en>Macro6</en>
+     </description>
+    </zone>
+    <zone value="60">
+     <start>56</start>
+     <end>63</end>
+     <description>
+      <en>Macro7</en>
+     </description>
+    </zone>
+    <zone value="68">
+     <start>64</start>
+     <end>70</end>
+     <description>
+      <en>Macro8</en>
+     </description>
+    </zone>
+    <zone value="71">
+     <start>71</start>
+     <end>71</end>
+     <description>
+      <en>Store colour_mode enable</en>
+     </description>
+    </zone>
+    <zone value="75">
+     <start>72</start>
+     <end>79</end>
+     <description>
+      <en>Macro9</en>
+     </description>
+    </zone>
+    <zone value="84">
+     <start>80</start>
+     <end>87</end>
+     <description>
+      <en>Macro10</en>
+     </description>
+    </zone>
+    <zone value="100">
+     <start>88</start>
+     <end>255</end>
+     <description>
+      <en>Future</en>
+     </description>
+    </zone>
+   </zones>
+  </channel>
+  <channel nr="8">
+   <function>control</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>multizone</mode>
+   <description>
+    <en>Mod colore</en>
+   </description>
+   <zones>
+    <zone value="32">
+     <start>0</start>
+     <end>63</end>
+     <description>
+      <en>White balance disabled</en>
+     </description>
+    </zone>
+    <zone value="127">
+     <start>64</start>
+     <end>189</end>
+     <description>
+      <en>White balanced enabled</en>
+     </description>
+    </zone>
+    <zone value="220">
+     <start>190</start>
+     <end>250</end>
+     <description>
+      <en>White balance disabled</en>
+     </description>
+    </zone>
+    <zone value="253">
+     <start>251</start>
+     <end>255</end>
+     <description>
+      <en>Store a new balance</en>
+     </description>
+    </zone>
+   </zones>
+  </channel>
+ </dmx>
+ <description>
+  <pl>oswietlacz Led</pl>
+ </description>
+ <geometry shape="square">
+  <width>970</width>
+  <height>256</height>
+  <anchor>left_up</anchor>
+ </geometry>
+</item>
+<item nr="7">
+ <provider>SGM</provider>
+ <model>Palco3</model>
+ <variant>std</variant>
+ <power>30</power>
+ <description>
+  <pl>Oœwietlacz architektoniczny</pl>
+ </description>
+ <geometry shape="square">
+  <width>50</width>
+  <height>30</height>
+  <anchor>center</anchor>
+ </geometry>
+ <dmx>
+  <range>8</range>
+  <channel nr="1">
+   <function>control</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>multizone</mode>
+   <description>
+    <en>Shutter,strobe,random</en>
+   </description>
+   <zones>
+    <zone value="0">
+     <start>0</start>
+     <end>7</end>
+     <description>
+      <en>Shuter closed</en>
+     </description>
+    </zone>
+    <zone value="10">
+     <start>8</start>
+     <end>15</end>
+     <description>
+      <en>undefined</en>
+      <pl>Shuter open</pl>
+     </description>
+    </zone>
+    <zone value="135">
+     <start>16</start>
+     <end>151</end>
+     <description>
+      <en>Linear Strobe frequency</en>
+     </description>
+    </zone>
+    <zone value="155">
+     <start>152</start>
+     <end>159</end>
+     <description>
+      <en>Pulse open effect low speed</en>
+     </description>
+    </zone>
+    <zone value="165">
+     <start>160</start>
+     <end>167</end>
+     <description>
+      <en>Pulse open effect medium speed</en>
+     </description>
+    </zone>
+    <zone value="172">
+     <start>168</start>
+     <end>175</end>
+     <description>
+      <en>Pulse open effect high speed</en>
+     </description>
+    </zone>
+    <zone value="179">
+     <start>176</start>
+     <end>183</end>
+     <description>
+      <en>Pulse close effect low speed</en>
+     </description>
+    </zone>
+    <zone value="188">
+     <start>184</start>
+     <end>191</end>
+     <description>
+      <en>Pulse close effect medium speed</en>
+     </description>
+    </zone>
+    <zone value="196">
+     <start>192</start>
+     <end>199</end>
+     <description>
+      <en>Pulse close effect high speed</en>
+     </description>
+    </zone>
+    <zone value="205">
+     <start>200</start>
+     <end>207</end>
+     <description>
+      <en>Random strobe effect low speed</en>
+     </description>
+    </zone>
+    <zone value="211">
+     <start>208</start>
+     <end>215</end>
+     <description>
+      <en>Random strobe effect medium speed</en>
+     </description>
+    </zone>
+    <zone value="221">
+     <start>216</start>
+     <end>223</end>
+     <description>
+      <en>Random strobe effect high speed</en>
+     </description>
+    </zone>
+    <zone value="230">
+     <start>224</start>
+     <end>255</end>
+     <description>
+      <en>Shutter open</en>
+     </description>
+    </zone>
+   </zones>
+  </channel>
+  <channel nr="2">
+   <function>dimmer</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Dimmer</en>
+   </description>
+  </channel>
+  <channel nr="3">
+   <function>brightness</function>
+   <color>255,0,0</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Red</en>
+   </description>
+  </channel>
+  <channel nr="4">
+   <function>brightness</function>
+   <color>0,255,0</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Green</en>
+   </description>
+  </channel>
+  <channel nr="5">
+   <function>brightness</function>
+   <color>0,0,255</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Blue</en>
+   </description>
+  </channel>
+  <channel nr="6">
+   <function>filter</function>
+   <color>255,255,255</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>CTC</en>
+   </description>
+  </channel>
+  <channel nr="7">
+   <function>control</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>multizone</mode>
+   <description>
+    <en>MACRO</en>
+   </description>
+   <zones>
+    <zone value="4">
+     <start>0</start>
+     <end>7</end>
+     <description>
+      <en>NO MACRO</en>
+     </description>
+    </zone>
+    <zone value="12">
+     <start>8</start>
+     <end>15</end>
+     <description>
+      <en>MACRO 1 Rainbow Slow - Stand Time 5 sec</en>
+     </description>
+    </zone>
+    <zone value="20">
+     <start>16</start>
+     <end>23</end>
+     <description>
+      <en>MACRO 2 Rainbow Medium - Stand Time 5 sec</en>
+     </description>
+    </zone>
+    <zone value="28">
+     <start>24</start>
+     <end>31</end>
+     <description>
+      <en>MACRO 3 Rainbow Fast - Stand Time 5 sec</en>
+     </description>
+    </zone>
+    <zone value="36">
+     <start>32</start>
+     <end>39</end>
+     <description>
+      <en>MACRO 4 Rainbow Slow - NO Stand Time</en>
+     </description>
+    </zone>
+    <zone value="44">
+     <start>40</start>
+     <end>47</end>
+     <description>
+      <en>MACRO 5 Rainbow Medium - NO Stand Time</en>
+     </description>
+    </zone>
+    <zone value="52">
+     <start>48</start>
+     <end>55</end>
+     <description>
+      <en>MACRO 6 Rainbow Fast - NO Stand Time</en>
+     </description>
+    </zone>
+    <zone value="60">
+     <start>56</start>
+     <end>63</end>
+     <description>
+      <en>MACRO7</en>
+     </description>
+    </zone>
+    <zone value="68">
+     <start>64</start>
+     <end>70</end>
+     <description>
+      <en>MACRO8</en>
+     </description>
+    </zone>
+    <zone value="71">
+     <start>71</start>
+     <end>71</end>
+     <description>
+      <en>Store colour mode enable</en>
+     </description>
+    </zone>
+    <zone value="72">
+     <start>72</start>
+     <end>79</end>
+     <description>
+      <en>MACRO9</en>
+     </description>
+    </zone>
+    <zone value="84">
+     <start>80</start>
+     <end>87</end>
+     <description>
+      <en>MACRO10</en>
+     </description>
+    </zone>
+    <zone value="100">
+     <start>88</start>
+     <end>255</end>
+     <description></description>
+    </zone>
+   </zones>
+  </channel>
+  <channel nr="8">
+   <function>control</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>multizone</mode>
+   <description></description>
+   <description>
+    <en>Colour mode</en>
+   </description>
+   <zones>
+    <zone value="32">
+     <start>0</start>
+     <end>63</end>
+     <description>
+      <en>White balance disabled (Full Colour)</en>
+     </description>
+    </zone>
+    <zone value="127">
+     <start>64</start>
+     <end>189</end>
+     <description>
+      <en>White balance enabled (Balanced)</en>
+     </description>
+    </zone>
+    <zone value="220">
+     <start>190</start>
+     <end>250</end>
+     <description>
+      <en>White balance disabled (Full Colour)</en>
+     </description>
+    </zone>
+    <zone value="253">
+     <start>251</start>
+     <end>255</end>
+     <description>
+      <en>Store a new white balance</en>
+     </description>
+    </zone>
+   </zones>
+  </channel>
+ </dmx>
+</item>
+<item nr="9">
+ <provider>- dowolny wytwórca fontann -</provider>
+ <model>Fontanna jednostrumieniowa</model>
+ <geometry shape="fountain">
+  <anchor>center</anchor>
+  <width>150</width>
+  <height>500</height>
+ </geometry>
+ <description>
+  <pl>Fontanna jednostrumieniowa</pl>
+  <en>Single stream fountain</en>
+ </description>
+ <dmx>
+  <range>1</range>
+  <channel nr="1">
+   <function>spring</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <pl>Wysokoœæ strumienia</pl>
+    <en>Spring height</en>
+   </description>
+  </channel>
+ </dmx>
+</item>
+<item nr="11">
+ <provider>- dowolny wytwórca fontann -</provider>
+ <model>Fontanna podœwietlana</model>
+ <variant>RGB</variant>
+ <dmx>
+  <range>4</range>
+  <channel nr="1">
+   <function>spring</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <pl>wysokoœæ strumienia</pl>
+    <en>Spring height</en>
+   </description>
+  </channel>
+  <channel nr="2">
+   <function>brightness</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <color name="R">255,0,0</color>
+   <description>
+    <en>Red light channel</en>
+    <pl>Kana³ czerwony</pl>
+   </description>
+  </channel>
+  <channel nr="3">
+   <function>brightness</function>
+   <color name="G">0,255,0</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Green light channel</en>
+    <pl>Kana³ zielony</pl>
+   </description>
+  </channel>
+  <channel nr="4">
+   <function>brightness</function>
+   <color name="B">0,0,255</color>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Blue light channel</en>
+    <pl>Kana³ niebieski</pl>
+   </description>
+  </channel>
+ </dmx>
+ <description>
+  <pl>Fontanna podœwietlana RGB</pl>
+  <en>fountain with RGB lighting </en>
+ </description>
+ <geometry shape="fountain">
+  <width>150</width>
+  <height>500</height>
+  <anchor>center</anchor>
+ </geometry>
+</item>
+<item nr="10">
+ <provider>- dowolny wytwórca fontann -</provider>
+ <model>Fontanna podœwietlana</model>
+ <variant>mono</variant>
+ <dmx>
+  <range>2</range>
+  <channel nr="1">
+   <function>spring</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <pl>wysokoœæ strumienia</pl>
+    <en>Spring height</en>
+   </description>
+  </channel>
+  <channel nr="2">
+   <function>brightness</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <color>255,255,255</color>
+   <description>
+    <en>lighting colour</en>
+    <pl>kolor podœwietlenia</pl>
+   </description>
+  </channel>
+ </dmx>
+ <description>
+  <pl>Fontanna podœwietlana jednobarwna</pl>
+  <en>fountain with monochromatic lighting </en>
+ </description>
+ <geometry shape="fountain">
+  <anchor>center</anchor>
+  <width>150</width>
+  <height>500</height>
+ </geometry>
+</item>
+<item nr="12">
+ <provider>- dowolny wytwórca fontann -</provider>
+ <model>Fontanna podœwietlana</model>
+ <variant>RGB-SW</variant>
+ <dmx>
+  <range>5</range>
+  <channel nr="1">
+   <function>spring</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <pl>Wysokoœæ strumienia</pl>
+    <en>Spring height</en>
+   </description>
+  </channel>
+  <channel nr="2">
+   <function>spring-switch</function>
+   <min>0</min>
+   <max>255</max>
+   <mode lvllo="114" lvlhi="142">hysteresis</mode>
+   <description>
+    <pl>Wy³¹czanie strumienia</pl>
+    <en>Spring switch</en>
+   </description>
+  </channel>
+  <channel nr="3">
+   <function>brightness</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <color name="R">255,0,0</color>
+   <description>
+    <en>Red light channel</en>
+    <pl>Kana³ czerwony</pl>
+   </description>
+  </channel>
+  <channel nr="4">
+   <function>brightness</function>
+   <color name="G">0,255,0</color>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <en>Green light channel</en>
+    <pl>Kana³ zielony</pl>
+   </description>
+  </channel>
+  <channel nr="5">
+   <function>brightness</function>
+   <color name="B">0,0,255</color>
+   <min>0</min>
+   <max>255</max>
+   <description>
+    <en>Blue light channel</en>
+    <pl>Kana³ niebieski</pl>
+   </description>
+  </channel>
+ </dmx>
+ <description>
+  <pl>Fontanna podœwietlana RGB kluczowana</pl>
+  <en>Switched fountain with RGB lighting </en>
+ </description>
+ <geometry shape="fountain">
+  <anchor>center</anchor>
+  <width>150</width>
+  <height>500</height>
+</geometry>
+</item>
+<item nr="13">
+ <provider>- dowolny wytwórca fontann -</provider>
+ <model>Fontanna podœwietlana</model>
+ <variant>mono-SW</variant>
+ <dmx>
+  <range>3</range>
+  <channel nr="1">
+   <function>spring</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <description>
+    <pl>wysokoœæ strumienia</pl>
+    <en>Spring height</en>
+   </description>
+  </channel>
+  <channel nr="2">
+   <function>spring-switch</function>
+   <min>0</min>
+   <max>255</max>
+   <mode lvllo="114" lvlhi="142">hysteresis</mode>
+   <description>
+    <pl>Wy³¹czanie strumienia</pl>
+    <en>Spring switch</en>
+   </description>
+  </channel>
+  <channel nr="3">
+   <function>brightness</function>
+   <min>0</min>
+   <max>255</max>
+   <mode>linear</mode>
+   <color>255,255,255</color>
+   <description>
+    <en>lighting colour</en>
+    <pl>kolor podœwietlenia</pl>
+   </description>
+  </channel>
+ </dmx>
+ <description>
+  <pl>Fontanna podœwietlana jednobarwna kluczowana</pl>
+  <en>Switched fountain with monochromatic lighting </en>
+ </description>
+ <geometry shape="fountain">
+  <anchor>center</anchor>
+  <width>150</width>
+  <height>500</height>
+ </geometry>
+</item>

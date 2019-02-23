@@ -39,6 +39,7 @@ public class Variables {
         if(isLiveMode){
             StageSender.getInstance().sendActualStageToServer();
         }
+
         if(isAnimationBarShowed){
             AnimationCreator.getInstance().replaceStageInAnimation(Variables.getInstance().awesomeViewsArr, Variables.getInstance().valueOfTimeLineBar);
         }

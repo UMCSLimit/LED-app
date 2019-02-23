@@ -346,7 +346,6 @@ public class SpaceController {
 
     }
 
-
     private void changeColorOfView(int id, @ColorInt int color) {
         Variables.getInstance().changeColorOfView(id, color);
     }

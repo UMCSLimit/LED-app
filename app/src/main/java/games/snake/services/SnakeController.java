@@ -251,7 +251,6 @@ public class SnakeController {
         if (isGameOver) {
             Variables.getInstance().isGameRunning = false;
             renderGameOverScreen();
-            renderGameOverScreen();
         } else {
             renderGameState();
         }

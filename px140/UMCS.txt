@@ -1,0 +1,30 @@
+R czerwone 1 4 7 10 ...
+G zielone 2 5 8 11 ...
+B niebieskie 3 6  9 12 ...
+
+wejscie 5 pczycisk prawy
+wejscie 4 - 2 od praw
+wejscie 3 - srodek
+
+ 
+
+1 lampa 1 2 3
+2 lampa 4 5 6
+3 lampa 7 8 9
+	10 11 12
+...
+
+
+pierwsze 5 z drugiego i ca³y do³
+
+
+ostani na dole to 84 pierwszy 2
+86 pierwszy na 2 pietrze 
+167 ostani na 2 pietrze
+169 3pietro czerwny poczatek
+252 ostani na 3 pietrze
+253 pierwszy na 4 czerowno
+336 ostani na 4 pietrze
+337 pierwszy 5 czerowno 
+384 ostni na 5 blue 
+

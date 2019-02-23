@@ -26,6 +26,11 @@ public class Snake  {
                 try {
                     while (!snakeController.isGameOver) {
                         snakeController.update();
+
+                        if(Variables.getInstance().isLiveMode){
+                            StageSender.getInstance().sendActualStageToServer();
+                        }
+
                         sleep(400 / (LEVEL * 2));
                     }
                 } catch (InterruptedException e) {
