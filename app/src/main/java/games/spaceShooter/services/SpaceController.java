@@ -321,15 +321,15 @@ public class SpaceController {
         try {
             StageSetter.getInstance().BLACK();
             Thread.sleep(200);
-            StageSetter.getInstance().RED();
-            Thread.sleep(200);
-            StageSetter.getInstance().BLACK();
-            Thread.sleep(200);
-            StageSetter.getInstance().RED();
-            Thread.sleep(200);
-            StageSetter.getInstance().BLACK();
-            Thread.sleep(200);
-            StageSetter.getInstance().RED();
+//            StageSetter.getInstance().RED();
+//            Thread.sleep(200);
+//            StageSetter.getInstance().BLACK();
+//            Thread.sleep(200);
+//            StageSetter.getInstance().RED();
+//            Thread.sleep(200);
+//            StageSetter.getInstance().BLACK();
+//            Thread.sleep(200);
+//            StageSetter.getInstance().RED();
             Thread.sleep(200);
             StageSetter.getInstance().setGAME();
             Thread.sleep(1000);
