@@ -25,7 +25,7 @@ public class SpaceController {
     private ArrayList<LaserBeam> laserBeams;
     private ArrayList<GameObject> objects;
 
-    private int startX = 24;
+    private int startX = 14;
     private int startY = 3;
 
     private short moveDir = 0;
@@ -42,9 +42,9 @@ public class SpaceController {
     private int laserDistance = 16;
 
     //MapSize
-    private int mapX = 28;
-    private int mapY = 5;
-    private int noWindowsSpace = 12;
+    private int mapX = Variables.width;
+    private int mapY = Variables.height;
+    private int noWindowsSpace = 0;
 
     //game states
     public boolean isGameOver = false;
@@ -78,7 +78,7 @@ public class SpaceController {
             moveSpaceShip();
             moveMeteor();
             meteorGenerator();
-            Variables.getInstance().scoreTextView.setText(points + " points");
+            Variables.getInstance().scoreTextView.setText(Integer.toString((int) points));
             points += 0.22 * LEVEL;
             newMeteorPropability = ((10.0 + (double) ammoOverall) / (double) (ammoOverall) * 2.7); //more value = less meteors
             shootLaser();
@@ -91,7 +91,7 @@ public class SpaceController {
     }
 
     private void initNewMeteor() {
-        int randomY = (int) (Math.random() * 4) + 1;
+        int randomY = (int) (Math.random() * Variables.height) + 1;
 
         Meteoryt meteoryt1 = new Meteoryt();
         meteoryt1.x = -1;
@@ -107,16 +107,32 @@ public class SpaceController {
         noseCone.y = startY;
         spaceShips.add(noseCone);
 
+        SpaceShip noseCone2 = new SpaceShip();
+        noseCone2.x = startX;
+        noseCone2.y = startY + 1;
+        spaceShips.add(noseCone2);
+
         SpaceShip mid = new SpaceShip();
         mid.x = startX + 1;
         mid.y = startY;
         spaceShips.add(mid);
+
+        SpaceShip mid2 = new SpaceShip();
+        mid2.x = startX + 1;
+        mid2.y = startY + 1;
+        spaceShips.add(mid2);
 
         SpaceShip engine = new SpaceShip();
         engine.x = startX + 2;
         engine.y = startY;
         engine.color = Color.RED;
         spaceShips.add(engine);
+
+        SpaceShip engine2 = new SpaceShip();
+        engine2.x = startX + 2;
+        engine2.y = startY + 1;
+        engine2.color = Color.RED;
+        spaceShips.add(engine2);
 
         objects.addAll(spaceShips);
     }
@@ -127,7 +143,7 @@ public class SpaceController {
             Meteoryt met = meteoryts.get(i);
             met.x += 1;
             met.x2 += 1;
-            if(met.x > 28){
+            if(met.x > Variables.width){
                 meteoryts.remove(met);
                 i--;
             }
@@ -135,7 +151,7 @@ public class SpaceController {
     }
 
     private void moveSpaceShip() {
-        if((spaceShips.get(0).y + moveDir) < (mapY) && spaceShips.get(0).y + moveDir > 0){
+        if((spaceShips.get(0).y + moveDir) < (mapY - 1) && spaceShips.get(0).y + moveDir > 0){
             for (int i = 0; i < spaceShips.size(); i++) {
                 SpaceShip ss = spaceShips.get(i);
                 ss.y += moveDir;
@@ -261,7 +277,7 @@ public class SpaceController {
 
                 } else {
                     viewId -= noWindowsSpace;
-                    if (viewId <= 127) {
+                    if (viewId <= Variables.numberOfWindows) {
                         for (GameObject s : objects) {
                             if (s.x == x && s.y == y) {
                                 if (s instanceof SpaceShip) {
@@ -303,18 +319,18 @@ public class SpaceController {
     }
 
     private void renderStartGame() {
-        try {
-            StageSetter.getInstance().THREE();
-            Thread.sleep(1000);
-            StageSetter.getInstance().TWO();
-            Thread.sleep(1000);
-            StageSetter.getInstance().ONE();
-            Thread.sleep(1000);
-            StageSetter.getInstance().GO();
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+////            StageSetter.getInstance().THREE();
+////            Thread.sleep(1000);
+////            StageSetter.getInstance().TWO();
+////            Thread.sleep(1000);
+////            StageSetter.getInstance().ONE();
+////            Thread.sleep(1000);
+////            StageSetter.getInstance().GO();
+////            Thread.sleep(500);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void renderGameOverScreen() {
@@ -330,14 +346,14 @@ public class SpaceController {
 //            StageSetter.getInstance().BLACK();
 //            Thread.sleep(200);
 //            StageSetter.getInstance().RED();
-            Thread.sleep(200);
-            StageSetter.getInstance().setGAME();
-            Thread.sleep(1000);
-            StageSetter.getInstance().setOVER();
-            Thread.sleep(1000);
-            StageSetter.getInstance().sadFace();
-            Thread.sleep(1000);
-            StageSetter.getInstance().BLACK();
+//            Thread.sleep(200);
+//            StageSetter.getInstance().setGAME();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().setOVER();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().sadFace();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().BLACK();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

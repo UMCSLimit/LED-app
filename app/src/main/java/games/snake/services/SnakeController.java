@@ -18,7 +18,7 @@ public class SnakeController {
         UP, DOWN, LEFT, RIGHT
     }
 
-    private Direction direction = Direction.LEFT;
+    private Direction direction = Direction.RIGHT;
 
     private ArrayList<SnakeSegment> snakeBody;
     private ArrayList<Food> foods;
@@ -26,11 +26,11 @@ public class SnakeController {
 
     //Direction
     private int xDir = 0;
-    private int yDir = -1;
+    private int yDir = 1;
 
     //Start
-    private int xStart = 20;
-    private int yStart = 2;
+    private int xStart = 2;
+    private int yStart = 6;
 
     //Previous
     private int prevDirX = 0;
@@ -41,9 +41,9 @@ public class SnakeController {
     public boolean isGameStarted = false;
 
     //MapSize
-    private int mapX = 28;
-    private int mapY = 5;
-    private int noWindowsSpace = 12;
+    private int mapX = Variables.width;
+    private int mapY = Variables.height;
+    private int noWindowsSpace = 0;
 
     public void init() {
         snakeBody = new ArrayList<SnakeSegment>();
@@ -52,6 +52,7 @@ public class SnakeController {
 
         initSnakeBody();
         initFood();
+
     }
 
     public void update() {
@@ -160,11 +161,11 @@ public class SnakeController {
     }
 
     private int randomX() {
-        return (int) (Math.random() * 28);
+        return (int) (Math.random() * Variables.width);
     }
 
     private int randomY() {
-        return (int) (Math.random() * 5);
+        return (int) (Math.random() * Variables.height);
     }
 
     private void checkGameOverConditionals() {
@@ -183,9 +184,10 @@ public class SnakeController {
     }
 
     private void overTheMap() {
-        if ((snakeBody.get(0).y == 0) && (snakeBody.get(0).x < noWindowsSpace)) {
-            isGameOver = true;
-        } else if (snakeBody.get(0).y > (mapY - 1) || snakeBody.get(0).y < 0) {
+//        if ((snakeBody.get(0).y == 0) && (snakeBody.get(0).x < noWindowsSpace)) {
+//            isGameOver = true;
+//        } else
+            if (snakeBody.get(0).y > (mapY - 1) || snakeBody.get(0).y < 0) {
             isGameOver = true;
         } else if (snakeBody.get(0).x > (mapX - 1) || snakeBody.get(0).x < 0) {
             isGameOver = true;
@@ -213,7 +215,7 @@ public class SnakeController {
                     objects.add(ss1);
 
                     newFood();
-                    Variables.getInstance().scoreTextView.setText((snakeBody.size()) + " points");
+                    Variables.getInstance().scoreTextView.setText(Integer.toString(snakeBody.size()));
 
                     break;
                 }
@@ -259,13 +261,13 @@ public class SnakeController {
     public void renderStartGame() {
 
         try {
-            StageSetter.getInstance().THREE();
-            Thread.sleep(1000);
-            StageSetter.getInstance().TWO();
-            Thread.sleep(1000);
-            StageSetter.getInstance().ONE();
-            Thread.sleep(1000);
-            StageSetter.getInstance().GO();
+//            StageSetter.getInstance().THREE();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().TWO();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().ONE();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().GO();
             Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -317,7 +319,7 @@ public class SnakeController {
                 } else {
                     viewId -= noWindowsSpace;
 
-                    if (viewId <= 127) {
+                    if (viewId <= Variables.numberOfWindows) {
                         for (GameObject s : objects) {
                             if (s.x == x && s.y == y) {
                                 if (s instanceof SnakeSegment) {

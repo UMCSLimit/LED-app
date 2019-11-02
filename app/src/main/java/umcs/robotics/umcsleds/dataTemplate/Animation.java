@@ -13,8 +13,6 @@ public class Animation implements Serializable {
         this.name = name;
     }
 
-
-
     // GETTERS AND SETTERS
     public ArrayList<Stage> getStages() {
         return stages;

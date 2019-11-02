@@ -23,7 +23,7 @@ public class StageSender {
 
     private static StageSender stageSender;
     private String chanelValuesJson;
-    int chanelValues[] = new int[385];
+    int chanelValues[] = new int[Variables.numberOfWindows * 3];
     StageToJson stageToJson = new StageToJson();
 
     RequestQueue queue = Volley.newRequestQueue(MainActivity.getAppContext());
@@ -44,7 +44,7 @@ public class StageSender {
         for (int i = 0; i <= Variables.numberOfWindows; i++) {
             int color = ((ColorDrawable) Variables.getInstance().awesomeViewsArr[i].getBackground()).getColor();
 
-            int channelID = 381 - i * 3;
+            int channelID = Variables.numberOfWindows*3-3 - i * 3;
             stageToJson.stage[channelID + 1] = Color.red(color);
             stageToJson.stage[channelID + 2] = Color.green(color);
             stageToJson.stage[channelID + 3] = Color.blue(color);

@@ -2,9 +2,11 @@ package umcs.robotics.umcsleds.dataTemplate;
 
 import java.io.Serializable;
 
+import umcs.robotics.umcsleds.configFiles.Variables;
+
 public class Stage implements Serializable {
     private String name;
-    private int rgbValue[] = new int[130];
+    private int rgbValue[] = new int[Variables.numberOfWindows + 1];
 
     //GETTERS and SETTERS
     public void setName(String name) {

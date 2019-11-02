@@ -20,20 +20,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.0"
+            android:layout_weight="1"
             android:orientation="horizontal"
-            android:weightSum="28"
             android:showDividers="middle"
+            android:weightSum="10"
             android:divider="@drawable/empty_tall_divider">
 
             <TextView
                 android:id="@+id/scoreText"
                 android:layout_width="0dp"
                 android:layout_height="64dp"
-                android:layout_weight="12"
+                android:layout_weight="1"
                 android:visibility="gone"
                 android:text="0 points"
-                android:textSize="50dp"
+                android:textSize="30dp"
                 android:textColor="@color/black"
                 android:layout_gravity="center"
                 android:gravity="center"/>
@@ -44,120 +44,8 @@
                 android:layout_width="0dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"
-                android:layout_weight="12"/>
+                android:layout_weight="9"/>
                 #app:cs_hex_colors="@array/hex_colors" />
-
-            <View
-                android:id="@+id/view12"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view13"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view14"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view15"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view16"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view17"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view18"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view19"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view20"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view21"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view22"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view23"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view24"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view25"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view26"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
-
-            <View
-                android:id="@+id/view27"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:background="@android:color/black" />
 
 
         </LinearLayout>
@@ -165,830 +53,1443 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.0"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:showDividers="middle"
             android:divider="@drawable/empty_tall_divider">
-
+            <View
+                android:id="@+id/view0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
+            <View
+                android:id="@+id/view17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view29"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view30"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view33"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
             <View
                 android:id="@+id/view34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view35"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view36"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view37"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view38"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view39"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view40"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view41"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view42"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view43"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view44"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view45"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view46"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view47"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view48"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view49"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view50"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
             <View
                 android:id="@+id/view51"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view52"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view53"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view54"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view55"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view56"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:orientation="horizontal"
-            android:showDividers="middle"
-            android:divider="@drawable/empty_tall_divider">
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view57"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view58"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view59"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view60"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view61"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view62"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view63"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view64"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view65"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view66"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view67"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
             <View
                 android:id="@+id/view68"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view69"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view70"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view71"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view72"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view73"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view74"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view75"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view76"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view77"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view78"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view79"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view80"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view81"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view82"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view83"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view84"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.0"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:showDividers="middle"
             android:divider="@drawable/empty_tall_divider">
-
             <View
                 android:id="@+id/view85"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view86"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view87"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view88"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view89"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view90"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view91"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view92"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view93"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view94"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view95"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view96"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view97"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view98"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view99"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view100"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view101"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view102"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view103"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view104"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view105"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view106"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view107"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view108"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view109"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view110"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view111"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
-            <View
-                android:id="@+id/view112"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/black" />"
-
+                android:background="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1.0"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:showDividers="middle"
             android:divider="@drawable/empty_tall_divider">
-
+            <View
+                android:id="@+id/view102"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view103"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view104"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view105"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view106"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view107"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view108"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view109"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view110"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view111"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view112"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
             <View
                 android:id="@+id/view113"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view114"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view115"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view116"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view117"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view118"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
             <View
                 android:id="@+id/view119"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view120"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view121"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view122"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view123"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view124"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view125"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view126"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view127"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view128"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view129"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view130"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view131"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view132"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view133"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view134"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view135"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
             <View
                 android:id="@+id/view136"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view137"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view138"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view139"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
-
             <View
                 android:id="@+id/view140"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/black" />
+            <View
+                android:id="@+id/view141"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view142"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view143"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view144"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view145"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view146"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view147"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view148"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view149"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view150"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view151"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view152"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
+            <View
+                android:id="@+id/view153"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view154"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view155"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view156"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view157"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view158"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view159"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view160"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view161"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view162"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view163"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view164"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view165"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view166"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view167"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view168"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view169"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
+            <View
+                android:id="@+id/view170"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view171"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view172"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view173"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view174"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view175"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view176"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view177"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view178"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view179"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view180"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view181"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view182"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view183"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view184"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view185"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view186"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
+            <View
+                android:id="@+id/view187"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view188"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view189"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view190"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view191"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view192"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view193"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view194"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view195"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view196"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view197"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view198"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view199"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view200"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view201"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view202"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view203"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:showDividers="middle"
+            android:divider="@drawable/empty_tall_divider">
+            <View
+                android:id="@+id/view204"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view205"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view206"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view207"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view208"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view209"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view210"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view211"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view212"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view213"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view214"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view215"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view216"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view217"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view218"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view219"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+            <View
+                android:id="@+id/view220"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/black" />
+        </LinearLayout>
+
         <include
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:visibility="invisible"
             layout="@layout/animation_bar" />
     </LinearLayout>
+
+
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_item"

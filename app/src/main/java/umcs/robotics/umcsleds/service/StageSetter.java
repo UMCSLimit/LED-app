@@ -63,20 +63,20 @@ public class StageSetter {
 
 
     private void setStage(String jsonStage) {
-        String[] jsonArr = jsonStage.split(",");
-
-        for (int i = 0; i <= Variables.numberOfWindows; i++) {
-            int colorID = (Variables.numberOfWindows * 3) - i * 3;
-            Log.d("setStage", "setStage" + jsonArr[colorID]);
-            int color = Color.rgb(Integer.parseInt(jsonArr[colorID + 1]), Integer.parseInt(jsonArr[colorID + 2]),
-                    Integer.parseInt(jsonArr[colorID + 3]));
-
-            Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(color);
-        }
-
-        if (Variables.getInstance().isLiveMode) {
-            StageSender.getInstance().sendActualStageToServer();
-        }
+//        String[] jsonArr = jsonStage.split(",");
+//
+//        for (int i = 0; i <= Variables.numberOfWindows; i++) {
+//            int colorID = (Variables.numberOfWindows * 3) - i * 3;
+//            Log.d("setStage", "setStage" + jsonArr[colorID]);
+//            int color = Color.rgb(Integer.parseInt(jsonArr[colorID + 1]), Integer.parseInt(jsonArr[colorID + 2]),
+//                    Integer.parseInt(jsonArr[colorID + 3]));
+//
+//            Variables.getInstance().awesomeViewsArr[i].setBackgroundColor(color);
+//        }
+//
+//        if (Variables.getInstance().isLiveMode) {
+//            StageSender.getInstance().sendActualStageToServer();
+//        }
     }
 
 

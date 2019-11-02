@@ -1,5 +1,7 @@
 package games.snake;
 
+import android.util.Log;
+
 import games.snake.services.SnakeController;
 import umcs.robotics.umcsleds.service.StageSender;
 import umcs.robotics.umcsleds.configFiles.Variables;
@@ -31,7 +33,7 @@ public class Snake  {
                             StageSender.getInstance().sendActualStageToServer();
                         }
 
-                        sleep(400 / (LEVEL * 2));
+                        sleep(800 / (LEVEL * 2));
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();

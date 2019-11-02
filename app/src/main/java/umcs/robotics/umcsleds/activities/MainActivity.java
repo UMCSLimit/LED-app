@@ -59,27 +59,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private NavigationView mNavigationView;
 
     public int viewIdArr[] = {
-            //R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5, R.id.view6, R.id.view7, R.id.view8, R.id.view9, R.id.view10, R.id.view11,
-            R.id.view12, R.id.view13,
-            R.id.view14, R.id.view15, R.id.view16, R.id.view17, R.id.view18, R.id.view19, R.id.view20,
-            R.id.view21, R.id.view22, R.id.view23, R.id.view24, R.id.view25, R.id.view26, R.id.view27,
-            R.id.view29, R.id.view30, R.id.view31, R.id.view32, R.id.view33, R.id.view34,
-            R.id.view35, R.id.view36, R.id.view37, R.id.view38, R.id.view39, R.id.view40, R.id.view41,
-            R.id.view42, R.id.view43, R.id.view44, R.id.view45, R.id.view46, R.id.view47, R.id.view48,
-            R.id.view49, R.id.view50, R.id.view51, R.id.view52, R.id.view53, R.id.view54, R.id.view55,
-            R.id.view56, R.id.view57, R.id.view58, R.id.view59, R.id.view60, R.id.view61, R.id.view62,
-            R.id.view63, R.id.view64, R.id.view65, R.id.view66, R.id.view67, R.id.view68, R.id.view69,
-            R.id.view70, R.id.view71, R.id.view72, R.id.view73, R.id.view74, R.id.view75, R.id.view76,
-            R.id.view77, R.id.view78, R.id.view79, R.id.view80, R.id.view81, R.id.view82, R.id.view83,
-            R.id.view84, R.id.view85, R.id.view86, R.id.view87, R.id.view88, R.id.view89, R.id.view90,
-            R.id.view91, R.id.view92, R.id.view93, R.id.view94, R.id.view95, R.id.view96, R.id.view97,
-            R.id.view98, R.id.view99, R.id.view100, R.id.view101, R.id.view102, R.id.view103, R.id.view104,
-            R.id.view105, R.id.view106, R.id.view107, R.id.view108, R.id.view109, R.id.view110, R.id.view111,
-            R.id.view112, R.id.view113, R.id.view114, R.id.view115, R.id.view116, R.id.view117, R.id.view118,
-            R.id.view119, R.id.view120, R.id.view121, R.id.view122, R.id.view123, R.id.view124, R.id.view125,
-            R.id.view126, R.id.view127, R.id.view128, R.id.view129, R.id.view130, R.id.view131, R.id.view132,
-            R.id.view133, R.id.view134, R.id.view135, R.id.view136, R.id.view137, R.id.view138, R.id.view139,
-            R.id.view140};
+            R.id.view0, R.id.view1, R.id.view2, R.id.view3, R.id.view4, R.id.view5, R.id.view6, R.id.view7, R.id.view8,
+            R.id.view9, R.id.view10, R.id.view11, R.id.view12, R.id.view13, R.id.view14, R.id.view15, R.id.view16,
+            R.id.view17, R.id.view18, R.id.view19, R.id.view20, R.id.view21, R.id.view22, R.id.view23, R.id.view24,
+            R.id.view25, R.id.view26, R.id.view27, R.id.view28, R.id.view29, R.id.view30, R.id.view31, R.id.view32,
+            R.id.view33, R.id.view34, R.id.view35, R.id.view36, R.id.view37, R.id.view38, R.id.view39, R.id.view40,
+            R.id.view41, R.id.view42, R.id.view43, R.id.view44, R.id.view45, R.id.view46, R.id.view47, R.id.view48,
+            R.id.view49, R.id.view50, R.id.view51, R.id.view52, R.id.view53, R.id.view54, R.id.view55, R.id.view56,
+            R.id.view57, R.id.view58, R.id.view59, R.id.view60, R.id.view61, R.id.view62, R.id.view63, R.id.view64,
+            R.id.view65, R.id.view66, R.id.view67, R.id.view68, R.id.view69, R.id.view70, R.id.view71, R.id.view72,
+            R.id.view73, R.id.view74, R.id.view75, R.id.view76, R.id.view77, R.id.view78, R.id.view79, R.id.view80,
+            R.id.view81, R.id.view82, R.id.view83, R.id.view84, R.id.view85, R.id.view86, R.id.view87, R.id.view88,
+            R.id.view89, R.id.view90, R.id.view91, R.id.view92, R.id.view93, R.id.view94, R.id.view95, R.id.view96,
+            R.id.view97, R.id.view98, R.id.view99, R.id.view100, R.id.view101, R.id.view102, R.id.view103, R.id.view104,
+            R.id.view105, R.id.view106, R.id.view107, R.id.view108, R.id.view109, R.id.view110, R.id.view111, R.id.view112,
+            R.id.view113, R.id.view114, R.id.view115, R.id.view116, R.id.view117, R.id.view118, R.id.view119, R.id.view120,
+            R.id.view121, R.id.view122, R.id.view123, R.id.view124, R.id.view125, R.id.view126, R.id.view127, R.id.view128,
+            R.id.view129, R.id.view130, R.id.view131, R.id.view132, R.id.view133, R.id.view134, R.id.view135, R.id.view136,
+            R.id.view137, R.id.view138, R.id.view139, R.id.view140, R.id.view141, R.id.view142, R.id.view143, R.id.view144,
+            R.id.view145, R.id.view146, R.id.view147, R.id.view148, R.id.view149, R.id.view150, R.id.view151, R.id.view152,
+            R.id.view153, R.id.view154, R.id.view155, R.id.view156, R.id.view157, R.id.view158, R.id.view159, R.id.view160,
+            R.id.view161, R.id.view162, R.id.view163, R.id.view164, R.id.view165, R.id.view166, R.id.view167, R.id.view168,
+            R.id.view169, R.id.view170, R.id.view171, R.id.view172, R.id.view173, R.id.view174, R.id.view175, R.id.view176,
+            R.id.view177, R.id.view178, R.id.view179, R.id.view180, R.id.view181, R.id.view182, R.id.view183, R.id.view184,
+            R.id.view185, R.id.view186, R.id.view187, R.id.view188, R.id.view189, R.id.view190, R.id.view191, R.id.view192,
+            R.id.view193, R.id.view194, R.id.view195, R.id.view196, R.id.view197, R.id.view198, R.id.view199, R.id.view200,
+            R.id.view201, R.id.view202, R.id.view203, R.id.view204, R.id.view205, R.id.view206, R.id.view207, R.id.view208,
+            R.id.view209, R.id.view210, R.id.view211, R.id.view212, R.id.view213, R.id.view214, R.id.view215, R.id.view216,
+            R.id.view217, R.id.view218, R.id.view219, R.id.view220};
 
     private ColorSlider.OnColorSelectedListener mListener = new ColorSlider.OnColorSelectedListener() {
         @Override
@@ -521,13 +528,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             } else if (Variables.getInstance().isAnimationBarShowed) {
                 //Changing color of view on slides
-                x *= 28;
-                y *= 6;
+                x *= Variables.width - 1;
+                y *= Variables.height + 2;
                 changeColorsOfViews((int) x, (int) y);
             } else {
                 //Changing color of view on slides
-                x *= 28;
-                y *= 5;
+                x *= Variables.width - 1;
+                y *= Variables.height;
                 changeColorsOfViews((int) x, (int) y);
             }
 
@@ -547,15 +554,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void changeColorsOfViews(int x, int y) {
-        int mapX = 28;
-        int noWindowsSpace = 12;
+        int mapX = Variables.width;
+        int noWindowsSpace = 0;
 
         int viewId = y * (mapX) + x;
         Log.d("Touch,", "touch3 id  " + viewId);
         if (y == 0 && x < noWindowsSpace) {
         } else {
             viewId -= noWindowsSpace;
-            if (viewId <= 127) {
+            if (viewId <= Variables.numberOfWindows) {
                 Variables.getInstance().changeColorOfView(viewId);
             }
         }

@@ -18,10 +18,13 @@ public class Variables {
         return variables;
     }
 
+    public static int height = 13;
+    public static int width = 17;
+
     public @ColorInt int sliderColor;
-    public static int numberOfWindows = 127;
+    public static int numberOfWindows = 220;
     public boolean isLiveMode = false;
-    public View awesomeViewsArr[] = new View[128];
+    public View awesomeViewsArr[] = new View[222];
     public boolean wasSettingOpen = false;
     public boolean isAnimationBarShowed = false;
     public int valueOfTimeLineBar = 0;
