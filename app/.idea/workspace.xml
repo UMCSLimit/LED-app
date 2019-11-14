@@ -11,93 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="672e864e-56f0-4175-9eff-b5bee47f5c42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_android_28.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_collections_28_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_28_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_naz013_ColorSlider_1_0_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/games/pong/Pong.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/games/pong/entities/Ball.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/games/pong/entities/GameObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/games/pong/entities/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/games/pong/entities/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/games/pong/services/PongController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/games/snake/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/games/snake/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/games/pong/services/PongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/games/pong/services/PongController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/games/snake/services/SnakeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/games/snake/services/SnakeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/games/spaceShooter/services/SpaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/games/spaceShooter/services/SpaceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/activities/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/configFiles/Variables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/configFiles/Variables.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/StageToJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/StageToJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,43 +41,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSender.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-870">
-              <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSaver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/games/snake/entities/SnakeSegment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="6" column="47" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/games/snake/Snake.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3">
-              <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-              <folding>
-                <element signature="e#501#1078#0" expanded="true" />
-                <element signature="e#1077#1078#0" expanded="true" />
-                <element signature="e#1142#1143#0" expanded="true" />
-                <element signature="e#1191#1192#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="255">
+              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -164,17 +52,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSetter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="1054">
               <caret line="65" selection-start-line="65" selection-start-column="2" selection-end-line="78" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/games/spaceShooter/services/SpaceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            <state relative-caret-position="5525">
+              <caret line="336" selection-start-line="336" selection-start-column="2" selection-end-line="336" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -183,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="510">
               <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
             </state>
           </provider>
@@ -192,45 +80,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/games/snake/services/SnakeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="217" column="100" selection-start-line="217" selection-start-column="100" selection-end-line="217" selection-end-column="100" />
+            <state relative-caret-position="4641">
+              <caret line="287" column="32" selection-start-line="287" selection-start-column="32" selection-end-line="287" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/games/pong/Pong.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/games/pong/services/PongController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2108">
+              <caret line="134" column="29" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="586" column="31" selection-start-line="586" selection-start-column="31" selection-end-line="586" selection-end-column="31" />
-              <folding>
-                <element signature="e#5203#5373#0" expanded="true" />
-                <element signature="e#5372#5373#0" expanded="true" />
-                <element signature="e#9528#9748#0" expanded="true" />
-                <element signature="e#9747#9748#0" expanded="true" />
-                <element signature="e#9797#10041#0" expanded="true" />
-                <element signature="e#10040#10041#0" expanded="true" />
-                <element signature="e#11624#12397#0" expanded="true" />
-                <element signature="e#12396#12397#0" expanded="true" />
-                <element signature="e#12994#13403#0" expanded="true" />
-                <element signature="e#13402#13403#0" expanded="true" />
-                <element signature="e#14121#15231#0" expanded="true" />
-                <element signature="e#15230#15231#0" expanded="true" />
-                <element signature="e#15902#16726#0" expanded="true" />
-                <element signature="e#16725#16726#0" expanded="true" />
-                <element signature="e#17141#17533#0" expanded="true" />
-                <element signature="e#17532#17533#0" expanded="true" />
-                <element signature="e#17578#17806#0" expanded="true" />
-                <element signature="e#17805#17806#0" expanded="true" />
-                <element signature="e#20262#20624#0" expanded="true" />
-                <element signature="e#20623#20624#0" expanded="true" />
-                <element signature="e#20786#21252#0" expanded="true" />
-                <element signature="e#21251#21252#0" expanded="true" />
-                <element signature="e#21883#21884#0" expanded="true" />
-                <element signature="e#21942#21943#0" expanded="true" />
-                <element signature="e#24408#24409#0" expanded="true" />
-                <element signature="e#24451#24452#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="89">
+              <caret line="543" column="20" lean-forward="true" selection-start-line="549" selection-start-column="61" selection-end-line="549" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/configFiles/Variables.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -238,7 +125,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/Animation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
+            <state relative-caret-position="187">
               <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
@@ -260,17 +147,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/configFiles/Variables.java" />
         <option value="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/Stage.java" />
         <option value="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/StageToJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSender.java" />
         <option value="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSetter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/activities/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/Animation.java" />
         <option value="$PROJECT_DIR$/src/main/java/games/snake/Snake.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/games/snake/services/SnakeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/games/spaceShooter/services/SpaceController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/games/snake/services/SnakeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/games/pong/services/PongController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/configFiles/Variables.java" />
+        <option value="$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/activities/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -286,7 +174,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -298,50 +187,6 @@
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="games" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="games" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="snake" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="games" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="snake" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="games" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="spaceShooter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="games" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="spaceShooter" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="games" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="spaceShooter" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
@@ -359,34 +204,6 @@
             <path>
               <item name="app" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="umcsleds" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="configFiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="umcsleds" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="dataTemplate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="umcsleds" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="listiners" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="umcsleds" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
@@ -399,13 +216,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="device.picker.selection" value="23ad9020c703" />
-    <property name="last_opened_file_path" value="E:/MaskotkaSGA/LED-app/app" />
+    <property name="last_opened_file_path" value="E:/QrCodeGame" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
@@ -501,12 +317,21 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16194332" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16194332" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -515,14 +340,15 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" visible="true" weight="0.36412078" />
-      <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.36412078" />
+      <window_info anchor="bottom" id="Debug" order="2" />
+      <window_info anchor="bottom" id="TODO" order="3" weight="0.3285968" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.3463588" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.3463588" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="9" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -542,13 +368,6 @@
             <element signature="e#1303#1304#0" expanded="true" />
             <element signature="e#1349#1350#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/configFiles/Variables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -606,106 +425,93 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-870">
+        <state relative-caret-position="510">
           <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSaver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
+        <state relative-caret-position="68">
           <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/games/snake/entities/SnakeSegment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
+        <state relative-caret-position="102">
           <caret line="6" column="47" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/Animation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/games/snake/Snake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="586" column="31" selection-start-line="586" selection-start-column="31" selection-end-line="586" selection-end-column="31" />
-          <folding>
-            <element signature="e#5203#5373#0" expanded="true" />
-            <element signature="e#5372#5373#0" expanded="true" />
-            <element signature="e#9528#9748#0" expanded="true" />
-            <element signature="e#9747#9748#0" expanded="true" />
-            <element signature="e#9797#10041#0" expanded="true" />
-            <element signature="e#10040#10041#0" expanded="true" />
-            <element signature="e#11624#12397#0" expanded="true" />
-            <element signature="e#12396#12397#0" expanded="true" />
-            <element signature="e#12994#13403#0" expanded="true" />
-            <element signature="e#13402#13403#0" expanded="true" />
-            <element signature="e#14121#15231#0" expanded="true" />
-            <element signature="e#15230#15231#0" expanded="true" />
-            <element signature="e#15902#16726#0" expanded="true" />
-            <element signature="e#16725#16726#0" expanded="true" />
-            <element signature="e#17141#17533#0" expanded="true" />
-            <element signature="e#17532#17533#0" expanded="true" />
-            <element signature="e#17578#17806#0" expanded="true" />
-            <element signature="e#17805#17806#0" expanded="true" />
-            <element signature="e#20262#20624#0" expanded="true" />
-            <element signature="e#20623#20624#0" expanded="true" />
-            <element signature="e#20786#21252#0" expanded="true" />
-            <element signature="e#21251#21252#0" expanded="true" />
-            <element signature="e#21883#21884#0" expanded="true" />
-            <element signature="e#21942#21943#0" expanded="true" />
-            <element signature="e#24408#24409#0" expanded="true" />
-            <element signature="e#24451#24452#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/service/StageSetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="1054">
           <caret line="65" selection-start-line="65" selection-start-column="2" selection-end-line="78" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/games/spaceShooter/services/SpaceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5525">
+          <caret line="336" selection-start-line="336" selection-start-column="2" selection-end-line="336" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="510">
           <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/games/snake/Snake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="e#501#1078#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
-            <element signature="e#1142#1143#0" expanded="true" />
-            <element signature="e#1191#1192#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/games/snake/services/SnakeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="217" column="100" selection-start-line="217" selection-start-column="100" selection-end-line="217" selection-end-column="100" />
+        <state relative-caret-position="4641">
+          <caret line="287" column="32" selection-start-line="287" selection-start-column="32" selection-end-line="287" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/games/spaceShooter/services/SpaceController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/games/pong/Pong.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        <state relative-caret-position="170">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/games/pong/services/PongController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="134" column="29" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/configFiles/Variables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/dataTemplate/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/umcs/robotics/umcsleds/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="543" column="20" lean-forward="true" selection-start-line="549" selection-start-column="61" selection-end-line="549" selection-end-column="64" />
         </state>
       </provider>
     </entry>

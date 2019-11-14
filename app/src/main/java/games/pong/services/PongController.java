@@ -65,12 +65,12 @@ public class PongController {
             System.out.println("GJ LEFT PLAYER");
             isGameOver = true;
             Variables.getInstance().isGameRunning = false;
-            StageSetter.getInstance().BLACK();
+            //StageSetter.getInstance().BLACK();
         } else if(didRightPWin){
             System.out.println("GJ RIGHT PLAYER");
             isGameOver = true;
             Variables.getInstance().isGameRunning = false;
-            StageSetter.getInstance().BLACK();
+            //StageSetter.getInstance().BLACK();
         } else{
             moveBall();
             movePlayers();
@@ -134,7 +134,6 @@ public class PongController {
         }
         if (leftPlayer.y == 4 || leftPlayer.y == 0) dirLP *= -1;
         if (rightPlayer.y == 4 || rightPlayer.y == 0) dirRP *= -1;
-
     }
 
     public void moveBall() {

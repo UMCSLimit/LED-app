@@ -260,28 +260,24 @@ public class SnakeController {
 
     public void renderStartGame() {
 
-        try {
-//            StageSetter.getInstance().THREE();
-//            Thread.sleep(1000);
-//            StageSetter.getInstance().TWO();
-//            Thread.sleep(1000);
-//            StageSetter.getInstance().ONE();
-//            Thread.sleep(1000);
-//            StageSetter.getInstance().GO();
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+////            StageSetter.getInstance().THREE();
+////            Thread.sleep(1000);
+////            StageSetter.getInstance().TWO();
+////            Thread.sleep(1000);
+////            StageSetter.getInstance().ONE();
+////            Thread.sleep(1000);
+////            StageSetter.getInstance().GO();
+//            Thread.sleep(500);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
     }
 
     public void renderGameOverScreen() {
 
-        try {
-            StageSetter.getInstance().BLACK();
-            Thread.sleep(200);
-//            StageSetter.getInstance().RED();
-//            Thread.sleep(200);
+//        try {
 //            StageSetter.getInstance().BLACK();
 //            Thread.sleep(200);
 //            StageSetter.getInstance().RED();
@@ -289,17 +285,21 @@ public class SnakeController {
 //            StageSetter.getInstance().BLACK();
 //            Thread.sleep(200);
 //            StageSetter.getInstance().RED();
-            Thread.sleep(200);
-            StageSetter.getInstance().setGAME();
-            Thread.sleep(1000);
-            StageSetter.getInstance().setOVER();
-            Thread.sleep(1000);
-            StageSetter.getInstance().sadFace();
-            Thread.sleep(1000);
-            StageSetter.getInstance().BLACK();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//            Thread.sleep(200);
+//            StageSetter.getInstance().BLACK();
+//            Thread.sleep(200);
+//            StageSetter.getInstance().RED();
+//            Thread.sleep(200);
+//            StageSetter.getInstance().setGAME();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().setOVER();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().sadFace();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().BLACK();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
         System.out.print("GAME OVER XD");
 

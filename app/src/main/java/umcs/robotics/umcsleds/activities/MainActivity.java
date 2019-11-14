@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
@@ -511,13 +512,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             float x = event.getRawX();
             float y = event.getRawY();
 
-            x /= width;
-            y /= height;
 
-            Log.d("Touch,", "touch3  " + x + "   " + y);
-            Log.d("Touch,", "touch3  " + width + "   " + height);
+            Log.d("TouchX", Float.toString(x));
+            Log.d("TouchY", Float.toString(y));
 
             if (Variables.getInstance().isGameRunning) {
+                x /= width;
+                y /= height;
                 x -= 0.5;
                 y -= 0.5;
                 if(snake != null){
@@ -526,16 +527,48 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if(spaceShooter != null){
                     controlSpaceShooter(x, y);
                 }
-            } else if (Variables.getInstance().isAnimationBarShowed) {
-                //Changing color of view on slides
-                x *= Variables.width - 1;
-                y *= Variables.height + 2;
-                changeColorsOfViews((int) x, (int) y);
-            } else {
-                //Changing color of view on slides
-                x *= Variables.width - 1;
-                y *= Variables.height;
-                changeColorsOfViews((int) x, (int) y);
+            }
+//            else if (Variables.getInstance().isAnimationBarShowed) {
+//                //Changing color of view on slides
+//                x *= Variables.width - 1;
+//                y *= Variables.height + 2;
+//                changeColorsOfViews((int) x, (int) y);
+//            }
+            else {
+
+                //Left top rect
+                Rect rectf = new Rect();
+                Variables.getInstance().awesomeViewsArr[0].getGlobalVisibleRect(rectf);
+
+                //Right bottom
+                Rect rectf2 = new Rect();
+                Variables.getInstance().awesomeViewsArr[Variables.getInstance().awesomeViewsArr.length - 1].getGlobalVisibleRect(rectf2);
+
+
+                if(((int)y) > rectf.top && ((int)y) < rectf2.bottom){
+                    //views_height
+                    int views_height = rectf2.bottom - rectf.top;
+
+                    y -= rectf.top;
+
+                    y -= (height - views_height);
+
+                    y /= views_height;
+
+                    Log.d("yyy", Float.toString(y));
+                    //x *= Variables.width;
+                    //x--;
+                    y *= Variables.height;
+
+                    //Changing color of view on slides
+                    x /= width;
+                    //y /= height;
+
+                    x *= Variables.width - 1;
+                    //y *= Variables.height;
+                    changeColorsOfViews((int) x, (int) y);
+                }
+
             }
 
         }

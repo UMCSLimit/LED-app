@@ -334,29 +334,29 @@ public class SpaceController {
     }
 
     public void renderGameOverScreen() {
-        try {
-            StageSetter.getInstance().BLACK();
-            Thread.sleep(200);
-//            StageSetter.getInstance().RED();
+//        try {
+//            //StageSetter.getInstance().BLACK();
 //            Thread.sleep(200);
-//            StageSetter.getInstance().BLACK();
-//            Thread.sleep(200);
-//            StageSetter.getInstance().RED();
-//            Thread.sleep(200);
-//            StageSetter.getInstance().BLACK();
-//            Thread.sleep(200);
-//            StageSetter.getInstance().RED();
-//            Thread.sleep(200);
-//            StageSetter.getInstance().setGAME();
-//            Thread.sleep(1000);
-//            StageSetter.getInstance().setOVER();
-//            Thread.sleep(1000);
-//            StageSetter.getInstance().sadFace();
-//            Thread.sleep(1000);
-//            StageSetter.getInstance().BLACK();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+////            StageSetter.getInstance().RED();
+////            Thread.sleep(200);
+////            StageSetter.getInstance().BLACK();
+////            Thread.sleep(200);
+////            StageSetter.getInstance().RED();
+////            Thread.sleep(200);
+////            StageSetter.getInstance().BLACK();
+////            Thread.sleep(200);
+////            StageSetter.getInstance().RED();
+////            Thread.sleep(200);
+////            StageSetter.getInstance().setGAME();
+////            Thread.sleep(1000);
+////            StageSetter.getInstance().setOVER();
+////            Thread.sleep(1000);
+////            StageSetter.getInstance().sadFace();
+////            Thread.sleep(1000);
+////            StageSetter.getInstance().BLACK();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
         System.out.print("GAME OVER XD");
 
