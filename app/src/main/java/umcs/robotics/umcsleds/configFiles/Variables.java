@@ -28,6 +28,13 @@ public class Variables {
     public boolean isGameRunning = false;
     public int gameLevel = 3;
     public TextView scoreTextView;
+    public boolean isGameStoped = false;
+
+    public int touchedX = 0;
+    public int touchedY = 0;
+    public boolean isTouched = false;
+
+    public boolean isRainbow = false;
 
     public void changeColorOfView(int id, int color){
         awesomeViewsArr[id].setBackgroundColor(color);

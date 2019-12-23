@@ -12,18 +12,21 @@ public class SpaceShooter {
     private SpaceController spaceController;
     private int LEVEL;
 
+    Thread thread;
+
     public SpaceShooter() {
         spaceController = new SpaceController();
         spaceController.init();
 
         LEVEL = Variables.getInstance().gameLevel;
 
+        Variables.getInstance().isGameStoped = false;
 
-        Thread thread = new Thread() {
+        thread = new Thread() {
             @Override
             public void run() {
                 try {
-                    while (!spaceController.isGameOver) {
+                    while (!spaceController.isGameOver && !Variables.getInstance().isGameStoped) {
                         spaceController.update();
 
                         if(Variables.getInstance().isLiveMode){
@@ -32,6 +35,8 @@ public class SpaceShooter {
 
                         sleep(360 / (LEVEL * 2));
                     }
+
+                    spaceController.isGameOver = true;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

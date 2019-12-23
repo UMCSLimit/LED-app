@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group
         android:id="@+id/group_1"
         android:checkableBehavior="single"
@@ -11,11 +12,17 @@
             android:id="@+id/d_animations"
             android:title="New animation Mode" />
         <item
+            android:id="@+id/raindow"
+            android:title="Rainbow" />
+        <item
             android:id="@+id/d_snake"
             android:title="Snake" />
         <item
             android:id="@+id/d_space_shooter"
             android:title="Space Shooter" />
+        <item
+            android:id="@+id/d_pong"
+            android:title="Pong" />
         <item
             android:id="@+id/d_reset"
             android:title="Reset stage" />
@@ -34,5 +41,9 @@
         <item
             android:id="@+id/d_settings"
             android:title="Settings" />
+        <item
+            android:id="@+id/stop_games"
+            android:title="Stop Games" />
+
     </group>
 </menu>

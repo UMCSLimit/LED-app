@@ -10,6 +10,8 @@ public class Snake  {
 
     private int LEVEL;
 
+    Thread thread;
+
     public Snake() {
         startGame();
     }
@@ -20,11 +22,13 @@ public class Snake  {
         snakeController = new SnakeController();
         snakeController.init();
 
-        Thread thread = new Thread() {
+        Variables.getInstance().isGameStoped = false;
+
+        thread = new Thread() {
             @Override
             public void run() {
                 try {
-                    while (!snakeController.isGameOver) {
+                    while (!snakeController.isGameOver && !Variables.getInstance().isGameStoped) {
                         snakeController.update();
 
                         if(Variables.getInstance().isLiveMode){
@@ -33,6 +37,8 @@ public class Snake  {
 
                         sleep(400 / (LEVEL * 2));
                     }
+                    snakeController.isGameOver = true;
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -44,6 +50,7 @@ public class Snake  {
     public boolean isGameOver(){
         return snakeController.isGameOver;
     }
+
 
     public void setSnakeDirection(SnakeController.Direction dir) {
         snakeController.setDirection(dir);

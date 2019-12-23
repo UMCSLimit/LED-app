@@ -39,13 +39,13 @@
                 android:gravity="center"/>
 
             <com.github.naz013.colorslider.ColorSlider
-                android:background="#dadada"
                 android:id="@+id/color_slider"
-                android:layout_width="0dp"
+                android:layout_width="8dp"
                 android:layout_height="64dp"
                 android:layout_gravity="center"
-                android:layout_weight="12"/>
-                #app:cs_hex_colors="@array/hex_colors" />
+                android:layout_weight="12"
+                android:background="#dadada" />
+            #app:cs_hex_colors="@array/hex_colors" />
 
             <View
                 android:id="@+id/view12"

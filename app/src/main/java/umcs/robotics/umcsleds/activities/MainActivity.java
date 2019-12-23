@@ -30,7 +30,10 @@ import com.github.naz013.colorslider.ColorSlider;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+import animations.Rainbow;
+import games.pong.Pong;
 import games.snake.Snake;
 import games.snake.services.SnakeController;
 import games.spaceShooter.SpaceShooter;
@@ -41,6 +44,7 @@ import umcs.robotics.umcsleds.dataTemplate.Animation;
 import umcs.robotics.umcsleds.dataTemplate.Stage;
 import umcs.robotics.umcsleds.service.AnimationCreator;
 import umcs.robotics.umcsleds.service.StageSaver;
+import umcs.robotics.umcsleds.service.StageSender;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private Snake snake;
     private SpaceShooter spaceShooter;
+    private Pong pong;
+    private Rainbow rainbow;
 
     private NavigationView mNavigationView;
 
@@ -119,34 +125,63 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Animation options bar
         setupAnimationBar();
+
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    while (true) {
+                        //if(Variables.getInstance().isLiveMode)
+                        StageSender.getInstance().sendActualStageToServer();
+                        sleep(1000/25);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        thread.start();
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
         if (id == R.id.d_single_stage) {
+            Variables.getInstance().isGameStoped = true;
             prepareDrawingStage();
             hideAnimationBar();
         } else if (id == R.id.d_animations) {
+            Variables.getInstance().isGameStoped = true;
             prepareDrawingStage();
             showAndHideAnimationBar();
         } else if (id == R.id.d_snake) {
             startSnake();
         } else if (id == R.id.d_space_shooter) {
             startSpaceShooter();
+        }else if(id == R.id.d_pong){
+            startPONG();
         }else if (id == R.id.d_reset) {
+            Variables.getInstance().isGameStoped = true;
             resetStage();
             Toast.makeText(this, "Reset is done!", Toast.LENGTH_LONG).show();
         } else if (id == R.id.d_save) {
             saveStage();
         } else if (id == R.id.d_open_stage) {
+            Variables.getInstance().isGameStoped = true;
             openStage();
         } else if (id == R.id.d_open_animation) {
+            Variables.getInstance().isGameStoped = true;
             openAnimation();
         } else if (id == R.id.d_remove) {
+            Variables.getInstance().isGameStoped = true;
             remove();
         } else if (id == R.id.d_settings) {
+            Variables.getInstance().isGameStoped = true;
             startActivity(new Intent(this, SettingsActivity.class));
+        } else if (id == R.id.stop_games) {
+            Variables.getInstance().isGameStoped = true;
+        } else if (id == R.id.raindow){
+            startRainBow();
         }
 
         //Hide menu
@@ -162,10 +197,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Variables.getInstance().scoreTextView.setVisibility(View.GONE);
     }
 
+
+    private void startRainBow(){
+            hideStatusBar();
+            hideAnimationBar();
+            rainbow = new Rainbow();
+    }
+
     private void startSnake() {
 
         hideStatusBar();
         hideAnimationBar();
+
+        Variables.getInstance().isGameStoped = false;
 
         //In the case of running 2 snakes in one time
         if(!Variables.getInstance().isGameRunning){
@@ -188,7 +232,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         hideStatusBar();
         hideAnimationBar();
 
-        //In the case of running 2 snakes in one time
+        Variables.getInstance().isGameStoped = false;
+
+        //In the case of running 2 shooters in one time
         if (spaceShooter != null) {
             if (spaceShooter.isGameOver()) {
                 spaceShooter = new SpaceShooter();
@@ -198,6 +244,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         Variables.getInstance().scoreTextView.setText("0 points");
+        Variables.getInstance().isGameRunning = true;
+        colorSlider.setVisibility(View.GONE);
+        Variables.getInstance().scoreTextView.setVisibility(View.VISIBLE);
+
+    }
+
+    private void startPONG(){
+        hideStatusBar();
+        hideAnimationBar();
+
+        Variables.getInstance().isGameStoped = false;
+
+
+        //In the case of running 2 shooters in one time
+        if (pong != null) {
+            if (pong.isGameOver()) {
+                pong = new Pong();
+                resetStage();
+            }
+        } else {
+            pong = new Pong();
+        }
+
+        //Variables.getInstance().scoreTextView.setText("0 points");
         Variables.getInstance().isGameRunning = true;
         colorSlider.setVisibility(View.GONE);
         Variables.getInstance().scoreTextView.setVisibility(View.VISIBLE);
@@ -501,6 +571,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             float width = metrics.widthPixels;
             float height = metrics.heightPixels;
 
+            Variables.getInstance().isTouched = true;
+
             float x = event.getRawX();
             float y = event.getRawY();
 
@@ -523,14 +595,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 //Changing color of view on slides
                 x *= 28;
                 y *= 6;
-                changeColorsOfViews((int) x, (int) y);
+
+                Variables.getInstance().touchedX =  (int) x - 1;
+                Variables.getInstance().touchedY =  (int) y;
+                if(!Variables.getInstance().isRainbow)
+                    changeColorsOfViews((int) x - 1, (int) y);
             } else {
                 //Changing color of view on slides
                 x *= 28;
                 y *= 5;
-                changeColorsOfViews((int) x, (int) y);
+
+                Variables.getInstance().touchedX =  (int) x - 1;
+                Variables.getInstance().touchedY =  (int) y;
+                if(!Variables.getInstance().isRainbow)
+                    changeColorsOfViews((int) x - 1, (int) y);
             }
 
+        } else {
+            Variables.getInstance().isTouched = false;
         }
         return super.dispatchTouchEvent(event);
     }
@@ -583,3 +665,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 }
+
