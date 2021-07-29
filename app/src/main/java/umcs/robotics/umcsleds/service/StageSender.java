@@ -23,7 +23,6 @@ public class StageSender {
 
     private static StageSender stageSender;
     private String chanelValuesJson; //= "";
-    int chanelValues[] = new int[385];
     StageToJson stageToJson = new StageToJson();
 
     RequestQueue queue = Volley.newRequestQueue(MainActivity.getAppContext());
@@ -49,11 +48,16 @@ public class StageSender {
     }
 
     public void sendActualStageToServer() {
+        int windows_without_led = 11;
+        for (int i=0; i < windows_without_led*3; i++){
+            stageToJson.stage[i] = 0;
+        }
+
         for (int i = 0; i <= Variables.numberOfWindows; i++) {
             int color = ((ColorDrawable) Variables.getInstance().awesomeViewsArr[i].getBackground()).getColor();
             Log.d("Window ID", "Window ID " + i);
 
-            int channelID = 381 - i * 3;
+            int channelID = (windows_without_led*3)+(i*3);
             stageToJson.key = Variables.udpKey;
             stageToJson.stage[channelID + 0] = Color.red(color);
             stageToJson.stage[channelID + 1] = Color.green(color);

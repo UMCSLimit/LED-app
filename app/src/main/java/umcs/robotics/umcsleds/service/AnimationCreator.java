@@ -68,7 +68,7 @@ public class AnimationCreator {
     }
 
     public void saveAnimationsOnDevice() {
-        String filename = "animations.txt";
+        String filename = "animations1.txt";
         Gson gson = new Gson();
         String s = gson.toJson(animations);
         FileOutputStream outputStream;
@@ -83,7 +83,7 @@ public class AnimationCreator {
 
     private void readAnimationsFromDevice() {
         try {
-            FileInputStream fis = MainActivity.getAppContext().openFileInput("animations.txt");
+            FileInputStream fis = MainActivity.getAppContext().openFileInput("animations1.txt");
             InputStreamReader isr = new InputStreamReader(fis);
             BufferedReader bufferedReader = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();
