@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void initVariables() {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        Variables.getInstance().udpServerIP = sp.getString("pref_udpIpAddress", "192.168.1.5\"");
+        Variables.getInstance().udpServerIP = sp.getString("pref_udpIpAddress", "192.168.1.5");
         Variables.getInstance().udpPort = sp.getString("pref_udpPort", "20001");
         Variables.getInstance().udpKey = sp.getString("pref_udpKey", "0000");
     }
