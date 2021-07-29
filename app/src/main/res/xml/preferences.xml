@@ -16,4 +16,26 @@
         android:defaultValue="@string/pref_gameLevel_default_value"
         android:summary="@string/pref_gameLevel"/>
 
+    <EditTextPreference
+        android:key="pref_udpIpAddress"
+        android:title="@string/pref_udpIpAddress"
+        android:defaultValue="@string/pref_udpIpAddress_default_value"
+        android:summary="@string/pref_udpIpAddress"/>
+
+    <EditTextPreference
+        android:key="pref_udpPort"
+        android:inputType="numberDecimal"
+        android:digits="0123456789"
+        android:title="@string/pref_udpPort"
+        android:defaultValue="@string/pref_udpPort_default_value"
+        android:summary="@string/pref_udpPort"/>
+
+    <EditTextPreference
+        android:key="pref_udpKey"
+        android:inputType="numberDecimal"
+        android:digits="0123456789"
+        android:title="@string/pref_udpKey"
+        android:defaultValue="@string/pref_udpKey_default_value"
+        android:summary="@string/pref_udpKey"/>
+
 </PreferenceScreen>

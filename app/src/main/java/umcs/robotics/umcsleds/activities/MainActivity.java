@@ -3,8 +3,10 @@ package umcs.robotics.umcsleds.activities;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -126,6 +128,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Animation options bar
         setupAnimationBar();
 
+        initVariables();
+
         Thread thread = new Thread() {
             @Override
             public void run() {
@@ -141,6 +145,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         };
         thread.start();
+    }
+
+    private void initVariables() {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        Variables.getInstance().udpServerIP = sp.getString("pref_udpIpAddress", "192.168.1.5\"");
+        Variables.getInstance().udpPort = sp.getString("pref_udpPort", "20001");
+        Variables.getInstance().udpKey = sp.getString("pref_udpKey", "0000");
     }
 
     @Override

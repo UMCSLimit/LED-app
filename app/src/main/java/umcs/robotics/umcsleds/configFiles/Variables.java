@@ -29,6 +29,9 @@ public class Variables {
     public int gameLevel = 3;
     public TextView scoreTextView;
     public boolean isGameStoped = false;
+    public static String udpServerIP = "192.168.1.5";
+    public static String udpPort = "20001";
+    public static String udpKey = "0000";
 
     public int touchedX = 0;
     public int touchedY = 0;

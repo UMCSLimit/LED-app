@@ -2,6 +2,7 @@ package umcs.robotics.umcsleds.activities;
 
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
+import android.preference.EditTextPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
@@ -18,8 +19,8 @@ public class SettingsFragment extends PreferenceFragment {
 
         addPreferencesFromResource(R.xml.preferences);
 
-        //CHECKBOXING XD
-        final CheckBoxPreference checkboxPref = (CheckBoxPreference) getPreferenceManager().findPreference("pref_isLiveMode");
+        final CheckBoxPreference checkboxPref = (CheckBoxPreference) getPreferenceManager().
+                findPreference("pref_isLiveMode");
 
         //Fixing bug with showing false value of LiveMode
         if (!Variables.getInstance().wasSettingOpen) {
@@ -41,8 +42,8 @@ public class SettingsFragment extends PreferenceFragment {
             }
         });
 
-        final ListPreference gameLevel = (ListPreference) getPreferenceManager().findPreference("pref_gameLevel");
-
+        final ListPreference gameLevel = (ListPreference) getPreferenceManager().
+                findPreference("pref_gameLevel");
         gameLevel.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -55,7 +56,37 @@ public class SettingsFragment extends PreferenceFragment {
                 } else if (newValue.equals("level4")) {
                     Variables.getInstance().gameLevel = 4;
                 }
-                return false;
+                return true;
+            }
+        });
+
+        final EditTextPreference udpIpAddress = (EditTextPreference) getPreferenceManager().
+                findPreference("pref_udpIpAddress");
+        udpIpAddress.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                Variables.getInstance().udpServerIP = (String) newValue;
+                return true;
+            }
+        });
+
+        final EditTextPreference udpPort = (EditTextPreference) getPreferenceManager().
+                findPreference("pref_udpPort");
+        udpPort.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                Variables.getInstance().udpPort = (String) newValue;
+                return true;
+            }
+        });
+
+        final EditTextPreference udpKey = (EditTextPreference) getPreferenceManager().
+                findPreference("pref_udpKey");
+        udpKey.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            @Override
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                Variables.getInstance().udpKey = (String) newValue;
+                return true;
             }
         });
     }

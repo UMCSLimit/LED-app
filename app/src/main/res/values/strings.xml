@@ -25,4 +25,13 @@
         <item>level4</item>
     </string-array>
 
+    <string name="pref_udpIpAddress">Server UDP Ip Address</string>
+    <string name="pref_udpIpAddress_default_value">localhost</string>
+
+    <string name="pref_udpPort">Server UDP Port</string>
+    <string name="pref_udpPort_default_value">12345</string>
+
+    <string name="pref_udpKey">Server UDP Key</string>
+    <string name="pref_udpKey_default_value">0000</string>
+
 </resources>

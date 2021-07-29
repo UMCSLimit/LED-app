@@ -304,12 +304,12 @@ public class SpaceController {
 
     private void renderStartGame() {
         try {
-            StageSetter.getInstance().THREE();
-            Thread.sleep(1000);
-            StageSetter.getInstance().TWO();
-            Thread.sleep(1000);
-            StageSetter.getInstance().ONE();
-            Thread.sleep(1000);
+//            StageSetter.getInstance().THREE();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().TWO();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().ONE();
+//            Thread.sleep(1000);
             StageSetter.getInstance().GO();
             Thread.sleep(500);
         } catch (InterruptedException e) {
@@ -319,7 +319,7 @@ public class SpaceController {
 
     public void renderGameOverScreen() {
         try {
-            StageSetter.getInstance().BLACK();
+//            StageSetter.getInstance().BLACK();
             Thread.sleep(200);
 //            StageSetter.getInstance().RED();
 //            Thread.sleep(200);
@@ -330,11 +330,11 @@ public class SpaceController {
 //            StageSetter.getInstance().BLACK();
 //            Thread.sleep(200);
 //            StageSetter.getInstance().RED();
-            Thread.sleep(200);
-            StageSetter.getInstance().setGAME();
-            Thread.sleep(1000);
-            StageSetter.getInstance().setOVER();
-            Thread.sleep(1000);
+//            Thread.sleep(200);
+//            StageSetter.getInstance().setGAME();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().setOVER();
+//            Thread.sleep(1000);
             StageSetter.getInstance().sadFace();
             Thread.sleep(1000);
             StageSetter.getInstance().BLACK();

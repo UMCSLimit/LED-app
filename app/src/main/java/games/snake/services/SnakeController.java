@@ -259,12 +259,12 @@ public class SnakeController {
     public void renderStartGame() {
 
         try {
-            StageSetter.getInstance().THREE();
-            Thread.sleep(1000);
-            StageSetter.getInstance().TWO();
-            Thread.sleep(1000);
-            StageSetter.getInstance().ONE();
-            Thread.sleep(1000);
+//            StageSetter.getInstance().THREE();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().TWO();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().ONE();
+//            Thread.sleep(1000);
             StageSetter.getInstance().GO();
             Thread.sleep(500);
         } catch (InterruptedException e) {
@@ -287,11 +287,11 @@ public class SnakeController {
 //            StageSetter.getInstance().BLACK();
 //            Thread.sleep(200);
 //            StageSetter.getInstance().RED();
-            Thread.sleep(200);
-            StageSetter.getInstance().setGAME();
-            Thread.sleep(1000);
-            StageSetter.getInstance().setOVER();
-            Thread.sleep(1000);
+//            Thread.sleep(200);
+//            StageSetter.getInstance().setGAME();
+//            Thread.sleep(1000);
+//            StageSetter.getInstance().setOVER();
+//            Thread.sleep(1000);
             StageSetter.getInstance().sadFace();
             Thread.sleep(1000);
             StageSetter.getInstance().BLACK();
@@ -299,7 +299,7 @@ public class SnakeController {
             e.printStackTrace();
         }
 
-        System.out.print("GAME OVER XD");
+        System.out.print("GAME OVER");
 
     }
 
