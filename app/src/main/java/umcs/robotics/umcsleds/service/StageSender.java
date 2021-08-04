@@ -23,6 +23,7 @@ public class StageSender {
 
     private static StageSender stageSender;
     private String chanelValuesJson; //= "";
+    private String lastSendValuesJson = "";
     StageToJson stageToJson = new StageToJson();
 
     RequestQueue queue = Volley.newRequestQueue(MainActivity.getAppContext());
@@ -37,8 +38,13 @@ public class StageSender {
 
     public StageSender() {
         try{
+
             serverAddr = InetAddress.getByName(Variables.getInstance().udpServerIP);
             int udp_port = Integer.parseInt(Variables.getInstance().udpPort);
+            if(udp_port > 60000 || udp_port < 1){
+                udp_port = 20002;
+                Variables.getInstance().udpPort = String.valueOf(udp_port);
+            }
             udpSocket = new DatagramSocket(udp_port);
         } catch (SocketException e) {
             Log.e("Udp:", "Socket Error:", e);
@@ -48,7 +54,7 @@ public class StageSender {
     }
 
     public void sendActualStageToServer() {
-        int windows_without_led = 11;
+        int windows_without_led = 12;
         for (int i=0; i < windows_without_led*3; i++){
             stageToJson.stage[i] = 0;
         }
@@ -68,7 +74,9 @@ public class StageSender {
         Gson gson = new Gson();
         chanelValuesJson = gson.toJson(stageToJson);
         Log.d("Json", "Json1 " + chanelValuesJson);
-        sendStageUDP();
+        if (!lastSendValuesJson.equals(chanelValuesJson)){
+            sendStageUDP();
+        }
     }
 
     private void sendStageUDP(){
@@ -77,6 +85,7 @@ public class StageSender {
             DatagramPacket packet = new DatagramPacket(buf, buf.length, serverAddr,
                     Integer.parseInt(Variables.getInstance().udpPort));
             udpSocket.send(packet);
+            lastSendValuesJson = chanelValuesJson;
         } catch (SocketException e) {
             Log.e("Udp:", "Socket Error:", e);
         } catch (IOException e) {

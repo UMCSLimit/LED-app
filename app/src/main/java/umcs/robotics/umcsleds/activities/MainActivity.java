@@ -157,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
+        Variables.getInstance().isGameStoped = true;
         if (id == R.id.d_single_stage) {
             Variables.getInstance().isGameStoped = true;
             prepareDrawingStage();
@@ -166,10 +167,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             prepareDrawingStage();
             showAndHideAnimationBar();
         } else if (id == R.id.d_snake) {
+            Variables.getInstance().isGameStoped = true;
             startSnake();
         } else if (id == R.id.d_space_shooter) {
+            Variables.getInstance().isGameStoped = true;
             startSpaceShooter();
         }else if(id == R.id.d_pong){
+            Variables.getInstance().isGameStoped = true;
             startPONG();
         }else if (id == R.id.d_reset) {
             Variables.getInstance().isGameStoped = true;
@@ -192,6 +196,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.stop_games) {
             Variables.getInstance().isGameStoped = true;
         } else if (id == R.id.raindow){
+            Variables.getInstance().isGameStoped = true;
             startRainBow();
         }
 
